@@ -246,6 +246,7 @@ export const StyledDescripcionFactores = styled(StyledSubtitle).attrs({
   font-family: "Montserrat, medium";
   color: #666666;
   font-weight: 500;
+  text-align: justify;
 
   @media (max-width: 1024px) {
     font-size: 12px;
