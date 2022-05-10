@@ -40,6 +40,7 @@ const useTerapeuticNumberStyles = () => {
     margin-top: 4.2%;
     font-weight: 500;
     margin-left: 2.4%;
+    text-align: justify;
 
     @media (max-width: 1023px){
       margin-left: 8.4%;
