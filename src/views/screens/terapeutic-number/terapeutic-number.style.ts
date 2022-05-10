@@ -11,7 +11,7 @@ const useTerapeuticNumberStyles = () => {
     background-size: 107% 142%;
     padding-bottom: 8.7%;
 
-    @media (max-width: 1023px){
+    @media (max-width: 1023px) {
       padding-top: 1rem;
       padding-bottom: 5%;
     }
@@ -42,7 +42,7 @@ const useTerapeuticNumberStyles = () => {
     margin-left: 2.4%;
     text-align: justify;
 
-    @media (max-width: 1023px){
+    @media (max-width: 1023px) {
       margin-left: 8.4%;
     }
 
@@ -87,13 +87,11 @@ const useTerapeuticNumberStyles = () => {
     background-color: transparent !important;
     background: linear-gradient(to top, #004269e0 100%, transparent);
     margin-top: 8.9rem;
-
-    @media (max-width: 700px) {
-      margin-top: 6.5rem;
-    }
-
     @media (max-width: 1024px) {
       margin-top: 10.5rem;
+    }
+    @media (max-width: 700px) {
+      margin-top: 6.5rem;
     }
   `;
 
@@ -115,7 +113,7 @@ const useTerapeuticNumberStyles = () => {
       font-size: 15px !important;
     }
 
-    @media (max-width: 500px){
+    @media (max-width: 500px) {
       height: 50px;
     }
   `;
@@ -138,7 +136,7 @@ const useTerapeuticNumberStyles = () => {
       font-size: 15px !important;
     }
 
-    @media (max-width: 500px){
+    @media (max-width: 500px) {
       height: 50px;
     }
   `;
@@ -161,7 +159,7 @@ const useTerapeuticNumberStyles = () => {
       font-size: 15px !important;
     }
 
-    @media (max-width: 500px){
+    @media (max-width: 500px) {
       height: 50px;
     }
   `;
@@ -185,7 +183,7 @@ const useTerapeuticNumberStyles = () => {
       font-size: 15px !important;
     }
 
-    @media (max-width: 500px){
+    @media (max-width: 500px) {
       height: 50px;
     }
   `;
