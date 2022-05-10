@@ -88,8 +88,12 @@ const useTerapeuticNumberStyles = () => {
     background: linear-gradient(to top, #004269e0 100%, transparent);
     margin-top: 8.9rem;
 
-    @media (max-width: 1023px) {
+    @media (max-width: 700px) {
       margin-top: 6.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      margin-top: 10.5rem;
     }
   `;
 
