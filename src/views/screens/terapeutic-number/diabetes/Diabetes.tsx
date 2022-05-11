@@ -2,7 +2,7 @@ import useControllers from "controllers";
 import { FC, Fragment, useState } from "react";
 import useComponents from "views/components";
 import _ from "lodash";
-import { IAccordionProps } from "views/components/Accordion/Accordion.interfaces";
+import { IAccordion } from "views/components/Accordion/Accordion.interfaces";
 import { StyledContainerDiabetes } from "./Diabetes.styles";
 import useTerapeuticNumberStyles from "../terapeutic-number.style";
 import { Container } from "@mui/material";
@@ -18,6 +18,7 @@ const Diabetes: FC = () => {
 
   /** States */
   const [width, setWidth] = useState<number>(window.innerWidth);
+  const [expanded, setExpanded] = useState<string | false>(false);
 
   /** Listeners */
   window.addEventListener("resize", () => setWidth(window.innerWidth));
@@ -43,15 +44,24 @@ const Diabetes: FC = () => {
         {/* Principal Banner */}
         {woundsAssets.diabetes_banner_1 !== undefined && (
           <StyledImage
-            src={woundsAssets.diabetes_banner_1 !== undefined && woundsAssets.diabetes_banner_1.content}
-            alt={woundsAssets.diabetes_banner_1 !== undefined && woundsAssets.diabetes_banner_1.alt}
+            src={
+              woundsAssets.diabetes_banner_1 !== undefined &&
+              woundsAssets.diabetes_banner_1.content
+            }
+            alt={
+              woundsAssets.diabetes_banner_1 !== undefined &&
+              woundsAssets.diabetes_banner_1.alt
+            }
           />
         )}
 
         {/* Description */}
         <StyledTerapeuticNumberSection
           style={{ backgroundSize: "109% 92%" }}
-          background={woundsAssets.diabetes_banner_1 !== undefined && woundsAssets.diabetes_background_1.content}
+          background={
+            woundsAssets.diabetes_banner_1 !== undefined &&
+            woundsAssets.diabetes_background_1.content
+          }
         >
           <Container>
             <Grid item lg={12} className="text-center">
@@ -84,14 +94,18 @@ const Diabetes: FC = () => {
                     color: "#666666",
                   }}
                   dangerouslySetInnerHTML={{
-                    __html: woundsAssets.diabetes_banner_1 !== undefined && woundsAssets.diabetes_text_1.content,
+                    __html:
+                      woundsAssets.diabetes_banner_1 !== undefined &&
+                      woundsAssets.diabetes_text_1.content,
                   }}
                 ></StyledTitulo1>
               ) : (
                 <StyledDescripcionFactores
                   className="xl:pb-12 lg:pb-12 pb-8"
                   dangerouslySetInnerHTML={{
-                    __html: woundsAssets.diabetes_banner_1 !== undefined && woundsAssets.diabetes_text_1.content,
+                    __html:
+                      woundsAssets.diabetes_banner_1 !== undefined &&
+                      woundsAssets.diabetes_text_1.content,
                   }}
                 ></StyledDescripcionFactores>
               )}
@@ -100,8 +114,17 @@ const Diabetes: FC = () => {
         </StyledTerapeuticNumberSection>
 
         {/* Accordions */}
-        {_.map(diabetesContent, (item: IAccordionProps, index: number) => (
-          <Accordion {...item} key={index} />
+        {_.map(diabetesContent, (item: IAccordion, index: number) => (
+          <Accordion 
+            title={item.title}
+            id={item.id}
+            name={item.name}
+            expanded={expanded}
+            setExpanded={setExpanded}
+            key={index} 
+          >
+            {item.children}
+          </Accordion>
         ))}
       </StyledContainerDiabetes>
     </Fragment>

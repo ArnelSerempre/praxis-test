@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, Fragment, useEffect, useState } from "react";
 import useTerapeuticNumberStyles, {
   StyledContainer,
 } from "./terapeutic-number.style";
@@ -6,7 +6,7 @@ import Heridas from "./Heridas";
 import Ulceras from "./ulceras";
 import { useParams, Link } from "react-router-dom";
 import Diabetes from "./diabetes/index";
-import Hemorroides from "./hemorroides";
+// import Hemorroides from "./hemorroides";
 import { Grid } from "@mui/material";
 // import { Container } from "@mui/material";
 
@@ -15,13 +15,15 @@ const TerapeuticNumber: FC = (): JSX.Element => {
     StyledAppBarPage,
     StyledGrid,
     StyledGrid3,
-    StyledGrid4,
+    // StyledGrid4,
     StyledGrid2,
   } = useTerapeuticNumberStyles();
 
   const { type } = useParams();
 
   const [width, setWidth] = useState<number>(window.innerWidth);
+
+ 
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -33,7 +35,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
         <StyledAppBarPage position="relative">
           <Grid container>
             <StyledGrid
-              xs={3}
+              xs={4}
               className="flex justify-center items-center"
               selected={type === "heridas" && true}
             >
@@ -48,7 +50,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
               </Link>
             </StyledGrid>
             <StyledGrid2
-              xs={3}
+              xs={4}
               className="flex justify-center items-center"
               selected={type === "ulceras" && true}
             >
@@ -63,7 +65,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
               </Link>
             </StyledGrid2>
             <StyledGrid3
-              xs={3}
+              xs={4}
               className="flex justify-center items-center"
               selected={type === "diabetes" && true}
             >
@@ -77,7 +79,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
                 Diabetes
               </Link>
             </StyledGrid3>
-            <StyledGrid4
+            {/* <StyledGrid4
               xs={3}
               className="flex justify-center items-center"
               selected={type === "enfermedad-hemorrodial" && true}
@@ -91,7 +93,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
               >
                 Enfermedad hemorroidal
               </Link>
-            </StyledGrid4>
+            </StyledGrid4> */}
           </Grid>
         </StyledAppBarPage>
 
@@ -102,7 +104,8 @@ const TerapeuticNumber: FC = (): JSX.Element => {
         ) : type === "diabetes" ? (
           <Diabetes />
         ) : (
-          <Hemorroides />
+          <Fragment></Fragment>
+          // <Hemorroides />
         )}
       </StyledContainer>
     </React.Fragment>

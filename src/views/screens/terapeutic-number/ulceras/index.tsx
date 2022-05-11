@@ -97,6 +97,7 @@ const Ulceras = () => {
                   fontSize: "17px",
                   width: "48%",
                   fontWeight: "500",
+                  textAlign: "justify"
                 }}
               ></p>
             ) : (
@@ -191,6 +192,7 @@ const Ulceras = () => {
                       fontSize: "17px",
                       width: "48%",
                       fontWeight: "500",
+                      textAlign: "justify"
                     }}
                   ></p>
                 </Grid>
@@ -366,6 +368,7 @@ const Ulceras = () => {
                   marginTop: "-0.5%",
                   fontFamily: "Montserrat, medium",
                   color: "#666666",
+                  textAlign: "justify"
                 }}
               >
                 {woundsAssets.ulceras_text_1.content}
@@ -482,6 +485,8 @@ const Ulceras = () => {
                   marginTop: "-0.7%",
                   fontFamily: "Montserrat, medium",
                   color: "#666666",
+                  textAlign: "justify"
+
                 }}
               ></p>
             </React.Fragment>

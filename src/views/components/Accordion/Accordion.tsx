@@ -1,17 +1,20 @@
-import { FC, SyntheticEvent, useState } from "react";
+import { FC, SyntheticEvent } from "react";
 import { IAccordionProps } from "./Accordion.interfaces";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { AccordionDetails, Typography } from "@mui/material";
 import {
-  Accordion as AccordionComponent,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
-} from "@mui/material";
+  StyledAccordionComponent,
+  StyledAccordionSummari,
+} from "./Accordion.styles";
 
-const Accordion: FC<IAccordionProps> = ({ children, name, id, title }) => {
-  /** States */
-  const [expanded, setExpanded] = useState<string | false>(false);
-
+const Accordion: FC<IAccordionProps> = ({
+  children,
+  name,
+  id,
+  title,
+  expanded,
+  setExpanded,
+}) => {
   /** Handlers */
   const handlerChange =
     (panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {
@@ -19,28 +22,27 @@ const Accordion: FC<IAccordionProps> = ({ children, name, id, title }) => {
     };
 
   return (
-    <AccordionComponent
+    <StyledAccordionComponent
       expanded={expanded === name}
       onChange={handlerChange(name)}
     >
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
+      <StyledAccordionSummari
+        expandIcon={<ExpandMoreIcon color={expanded === name ? "primary" : "info"}/>}
         aria-controls={`${name}-content`}
         id={id}
       >
         <Typography
           sx={{
             fontFamily: "Montserrat, bold",
-            color: "#014380",
             fontSize: 16,
-            fontWeight: "700"
+            fontWeight: "700",
           }}
         >
-          {expanded === name ? "" : title}
+          {title}
         </Typography>
-      </AccordionSummary>
+      </StyledAccordionSummari>
       <AccordionDetails>{children}</AccordionDetails>
-    </AccordionComponent>
+    </StyledAccordionComponent>
   );
 };
 

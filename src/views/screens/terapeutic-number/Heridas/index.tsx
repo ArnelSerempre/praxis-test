@@ -131,6 +131,7 @@ const Heridas = () => {
                           fontFamily: "Montserrat, medium",
                           color: "#666666",
                           fontWeight: "500",
+                          textAlign: "justify"
                         }}
                         dangerouslySetInnerHTML={{
                           __html:
@@ -190,6 +191,7 @@ const Heridas = () => {
                         fontFamily: "Montserrat, medium",
                         color: "#666666",
                         fontWeight: "500",
+                        textAlign: "justify"
                       }}
                       dangerouslySetInnerHTML={{
                         __html: woundsAssets.wounds2[1].content.split("--")[1],
@@ -479,7 +481,9 @@ const Heridas = () => {
                       <StyledTitleEmergency>
                         {item.content.split("--")[0]}
                       </StyledTitleEmergency>
-                      <StyledDescriptionEmergency>
+                      <StyledDescriptionEmergency 
+                      style={{ textAlign: "justify" }}
+                      >
                         {item.content.split("--")[1]}
                       </StyledDescriptionEmergency>
                     </Grid>
@@ -574,6 +578,7 @@ const Heridas = () => {
                     fontSize: "17px",
                     width: "48%",
                     fontWeight: "500",
+                    textAlign: "justify"
                   }}
                 ></p>
               </Grid>
@@ -770,11 +775,12 @@ const Heridas = () => {
             <p
               style={{
                 fontSize: "17px",
-                padding: "17px 83px",
+                padding: "17px 114px",
                 fontFamily: "Montserrat, medium",
                 color: "#666666",
                 marginTop: "0.2%",
                 fontWeight: "500",
+                textAlign: "justify"
               }}
             >
               {woundsAssets.factoresSubDescription.content}
@@ -845,6 +851,7 @@ const Heridas = () => {
                 fontWeight: "500",
                 fontFamily: "Montserrat, medium",
                 color: "#666666",
+                textAlign: "justify"
               }}
               dangerouslySetInnerHTML={{
                 __html: woundsAssets.Herida_texto_4.content,
@@ -982,6 +989,7 @@ const Heridas = () => {
                       fontSize: "17px",
                       width: "48%",
                       fontWeight: "500",
+                      textAlign: "justify"
                     }}
                   ></p>
                 ) : (

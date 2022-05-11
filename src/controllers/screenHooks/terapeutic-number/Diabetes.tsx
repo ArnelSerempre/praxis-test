@@ -133,6 +133,7 @@ const useDiabetes = (width: number, woundsAssets: any) => {
                     fontFamily: "Montserrat, medium",
                     color: "#666666",
                     fontWeight: "500",
+                    textAlign: "justify"
                   }}
                 >
                   {woundsAssets.diabetes_text_2 !== undefined &&
@@ -253,6 +254,7 @@ const useDiabetes = (width: number, woundsAssets: any) => {
                         marginLeft: "14%",
                         marginTop: "5.9%",
                         lineHeight: "1.1",
+                        textAlign: "justify"
                       }}
                     ></p>
                   </React.Fragment>

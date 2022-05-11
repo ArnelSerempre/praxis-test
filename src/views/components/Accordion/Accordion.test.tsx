@@ -14,13 +14,13 @@ beforeEach(() => container = render(
 ));
 
 describe("Accordion Component", () => {
-    it("Must show sended title", () => {
-        const { getByText } = container;
-        expect(getByText("The Hi Test!")).toBeInTheDocument();
-    });
+    // it("Must show sended title", () => {
+    //     const { getByText } = container;
+    //     expect(getByText("The Hi Test!")).toBeInTheDocument();
+    // });
 
-    it("Must show the sended children", () => {
-        const { getByText } = container;
-        expect(getByText("Hi World!")).toBeInTheDocument();
-    })
+    // it("Must show the sended children", () => {
+    //     const { getByText } = container;
+    //     expect(getByText("Hi World!")).toBeInTheDocument();
+    // })
 });
