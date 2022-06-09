@@ -19,6 +19,7 @@ const useHomeInitialStates = () => {
         getMisionInitialState,
         getValoresInitialState,
         getTeamInitialState,
+        setHoverInitialState: {hover: false, id: 0}
     }
 }
 

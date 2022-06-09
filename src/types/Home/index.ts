@@ -1,5 +1,6 @@
 const useHomeTypes = () => {
     return {
+        HOME_SET_HOVER: "HOME::SET_HOVER",
         HOME_GET_BANNER: "HOME::GET_BANNER",
         HOME_GET_BACKGROUND: "HOME::GET_BACKGROUND",
         HOME_GET_SECTIONS: "HOME::GET_SECTIONS",

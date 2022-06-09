@@ -5,6 +5,14 @@ const useHomeSelectors = () => {
     const { createSelector } = useCreateSelector();
 
     // Selectors
+    const hoverSelector = createSelector(
+        (state: any) => state.hover,
+        (hover: any) => hover
+    );
+
+
+
+
     const bannerHomeSelector = createSelector(
         (state: any) => state.bannerHome,
         (bannerHome: any) => bannerHome
@@ -36,6 +44,9 @@ const useHomeSelectors = () => {
     )
 
     return {
+        hoverSelector,
+
+
         bannerHomeSelector,
         backgroundHomeSelector,
         sectionsHomeSelector,

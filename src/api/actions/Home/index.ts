@@ -1,11 +1,17 @@
 import useServices from "api/services";
+import { IHoverProps } from "models/interfaces/home.interfaces";
 import { Dispatch } from "redux";
+import useTypes from "types";
 import {IAction} from "../../../models/interfaces";
 
 const useHomeActions = () => {
     /** Services */
     const { useHomeServices } = useServices();
     const { getHomeAssetsService } = useHomeServices();
+
+    /** Types */
+    const {useHomeTypes} = useTypes();
+    const {HOME_SET_HOVER} = useHomeTypes();
 
     /** Actions */
     const actGetHomeAssets = (request: IAction) => async(dispatch: Dispatch) => {
@@ -26,8 +32,22 @@ const useHomeActions = () => {
         }
     }
 
+    const actSetHover = (request: IHoverProps) => async (dispatch: Dispatch) => {
+        try {
+            dispatch({
+                type: HOME_SET_HOVER,
+                payload: request
+            });           
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+
     return {
-        actGetHomeAssets
+        actGetHomeAssets,
+        actSetHover
     }
 }
 

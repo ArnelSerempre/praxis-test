@@ -15,6 +15,7 @@ const useReducers = () => {
         misionHome,
         valoresHome,
         teamHome,
+        hover
     } = useHomeReducers();
 
     const { post } = useBlogReducers();
@@ -39,7 +40,8 @@ const useReducers = () => {
             getPostsPacientes,
             contentCuidadores,
             contentCuidadoresArtesanal,
-            login
+            login,
+            hover
         })
     );
 }

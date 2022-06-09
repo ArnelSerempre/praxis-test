@@ -12,6 +12,7 @@ const useHomeReducers = () => {
         getMisionInitialState,
         getValoresInitialState,
         getTeamInitialState,
+        setHoverInitialState
     } = useHomeInitialStates();
 
     // Types
@@ -23,9 +24,20 @@ const useHomeReducers = () => {
         HOME_GET_MISION,
         HOME_GET_VALORES,
         HOME_GET_TEAM,
+        HOME_SET_HOVER
     } = useHomeTypes();
 
     // Reducers
+    const hover = createReducer(setHoverInitialState, {
+        [HOME_SET_HOVER](state: any, action: any){
+            return {
+                ...state,
+                ...action.payload
+            }
+        }
+    });
+
+
     const bannerHome = createReducer(
         getBannerInitialState,
         {
@@ -104,7 +116,8 @@ const useHomeReducers = () => {
         sectionsHome,
         misionHome,
         valoresHome,
-        teamHome
+        teamHome,
+        hover
     };
 };
 
