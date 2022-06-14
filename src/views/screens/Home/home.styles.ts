@@ -5,13 +5,13 @@ import { Container } from "@mui/material";
 import { IStyledLink } from "models/interfaces/home.interfaces";
 
 export const StyledSectionsHome = styled.section`
-  ${tw`py-16 pb-4 pl-16 sm:pt-4 md:pt-12`}
+  ${tw`py-8 lg:py-16 xl:py-16 xl:pb-4 lg:pb-4 xl:pl-16 lg:pl-16 sm:pt-4 md:pt-12`}
   background-image: url('${(props: any) => props.background}');
   background-size: 100% 100%;
 `;
 
 export const StyledTitleSection = styled.h1`
-  ${tw`text-[45px] sm:text-[20px] md:text-[2rem] text-[#004289]`}
+  ${tw`text-[20px] md:text-[2rem] lg:text-[45px] xl:text-[45px] 2xl:text-[45px] text-[#004289]`}
   font-weight: bolder;
   font-family: 'Montserrat, bold', sans-serif;
 `;
@@ -34,55 +34,13 @@ export const StyledImgSections = styled.img`
   ${tw`w-[257px]`}
 `;
 
-export const StyledAccordion = styled.div`
-  ${tw`overflow-hidden my-[20px] mx-[auto]`}
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.08);
-  border: 7px solid rgba(255,255,255,0.6);
+export const StyledContainer = styled(Container)`
+  ${tw`max-w-[1200px] 2xl:max-w-[1536px] pb-8`}
+`;
 
-  figure {
-    ${tw`absolute top-0 left-[50px] w-full`}
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.6);
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-  }
-
-  & > figure {
-    ${tw`relative`}
-    left: 0 !important;
-  }
-
-  img {
-    ${tw`block w-full`}
-  }
-
-  input {
-    ${tw`absolute top-0 left-0 w-[50%] h-full cursor-pointer`}
-    border: 0;
-		padding: 0;
-		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-		filter: alpha(opacity=0);
-		opacity: 0;
-		z-index: 100;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-  }
-
-  input:checked {
-    ${tw`w-[5px] left-[auto] right-0`}
-  }
-
-  input:checked ~ figure {
-    ${tw`left-[50%]`}
-    -webkit-transition: all 0.7s ease-in-out;
-		-moz-transition: all 0.7s ease-in-out;
-		-o-transition: all 0.7s ease-in-out;
-		-ms-transition: all 0.7s ease-in-out;
-		transition: all 0.7s ease-in-out;
-  }
+export const StyledImage = styled.img<{ width: number; }>`
+  ${({ width }: any) => width >= 1024 ? tw`mt-[11%]` : (width >= 500 && width <= 767) ? tw`mt-[22%]` : tw`mt-[29%]`}
+  ${tw`w-full`}
 `;
 
 const useHomeStyles = () => {
@@ -169,16 +127,3 @@ const useHomeStyles = () => {
 
 export default useHomeStyles;
 
-export const StyledContainer = styled(Container).attrs({
-  className: "general-container",
-})`
-  max-width: 1536px;
-  @media (max-width: 1500px) {
-    max-width: 1200px;
-  }
-`;
-
-export const StyledImage = styled.img<{ width: number; }>`
-  ${({ width }: any) => width ? tw`mt-[11%]` : (width >= 500 && width <= 767) ? tw`mt-[22%]` : tw`mt-[29%]`}
-  ${tw`w-full`}
-`;

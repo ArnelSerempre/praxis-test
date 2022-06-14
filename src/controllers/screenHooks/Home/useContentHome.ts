@@ -37,9 +37,9 @@ const useContentHome = () => {
           item.alt === "background" && setBackground(item);
           item.section === "Mision - Vision" && setMisionVision(item);
           item.section === "Gerencial Team" && setGerencialTeam(item);
-          setMisionResponsive(item.id === 266 && item);
-          setGerencialResponsive(item.id === 269 && item);
-          setBannerResponsive1(item.id === 270 && item);
+          item.id === 266 && setMisionResponsive(item);
+          item.id === 269 && setGerencialResponsive(item);
+          item.id === 270 && setBannerResponsive1(item);
           
 
           if (item.id === 4) {
