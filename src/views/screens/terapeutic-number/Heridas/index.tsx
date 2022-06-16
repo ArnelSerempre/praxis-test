@@ -298,151 +298,142 @@ const Heridas = () => {
             id: "Tipos de tejido en una herida",
             title: "Tipos de tejido en una herida",
             content: (
-                <Container maxWidth="xl">
-                    <StyledTitleTypesWounds>
-                        Tipos de tejido en una herida
-                    </StyledTitleTypesWounds>
-                    <StyledDescriptionTypesWounds
-                     style={{
-                        textAlign: "justify"
-                    }}
+                <>
+                    <Container maxWidth="xl">
+                        <StyledTitleTypesWounds>
+                            Tipos de tejido en una herida
+                        </StyledTitleTypesWounds>
+                        <StyledDescriptionTypesWounds>
+                            {woundsAssets.wound_type_description !== undefined &&
+                                woundsAssets.wound_type_description.content}
+                        </StyledDescriptionTypesWounds>
+                    </Container>
+                    <StyledTabContainer
+                        container
+                        className="pt-8 justify-center"
+                        style={{display: "grid"}}
                     >
-                        {woundsAssets.wound_type_description !== undefined &&
-                            woundsAssets.wound_type_description.content}
-                    </StyledDescriptionTypesWounds>
-                </Container>
-            )
-        },
-        {
-            name: "Tejidos en una herida",
-            id: "Tejidos en una herida",
-            title: "Tejidos en una herida",
-            content: (
-                <StyledTabContainer
-                    container
-                    className="pt-8 justify-center"
-                    style={{display: "grid"}}
-                >
-                    <Box
-                        style={{marginLeft: "4%", marginTop: "1.7%"}}
-                        sx={{
-                            width: "100%",
-                            typography: "body1",
-                        }}
-                    >
-                        <TabContext value={value}>
-                            <Box sx={{borderBottom: 1, borderColor: "transparent"}}>
-                                <TabList
-                                    onChange={handleChange}
-                                    aria-label="lab API tabs example"
-                                    className="tabs"
-                                >
-                                    {_.map(tabs, (item: any, index: number) => (
-                                        <Tab
-                                            className="mr-1 heridas-tabs"
-                                            label={item}
-                                            value={index.toString()}
-                                            style={{
-                                                backgroundColor: "#8A8A8A",
-                                                textTransform: "capitalize",
-                                            }}
-                                        />
-                                    ))}
-                                </TabList>
-                            </Box>
-                            <TabPanel value="0">
-                                <Grid container className="justify-center align-items-center">
-                                    {_.map(woundsAssets.tabs, (item: any, index: number) => (
-                                        <React.Fragment>
-                                            {item.section.includes("1-image") && (
-                                                <Grid
-                                                    item
-                                                    md={12}
-                                                    className="lg:pr-12 xl:pr-12 container-tab"
-                                                    key={index}
-                                                >
-                                                    <img src={item.content} alt=""/>
-                                                </Grid>
-                                            )}
-                                        </React.Fragment>
-                                    ))}
-                                </Grid>
-                            </TabPanel>
-                            <TabPanel value="1">
-                                <Grid container className="justify-center align-items-center">
-                                    {_.map(woundsAssets.tabs, (item: any, index: number) => (
-                                        <React.Fragment>
-                                            {item.section.includes("2-image") && (
-                                                <Grid
-                                                    item
-                                                    md={12}
-                                                    className="lg:pr-12 xl:pr-12 container-tab"
-                                                    key={index}
-                                                >
-                                                    <img src={item.content} alt=""/>
-                                                </Grid>
-                                            )}
-                                        </React.Fragment>
-                                    ))}
-                                </Grid>
-                            </TabPanel>
-                            <TabPanel value="2">
-                                <Grid container className="justify-center align-items-center">
-                                    {_.map(woundsAssets.tabs, (item: any, index: number) => (
-                                        <React.Fragment>
-                                            {item.section.includes("3-image") && (
-                                                <Grid
-                                                    item
-                                                    md={12}
-                                                    className="lg:pr-12 xl:pr-12 container-tab"
-                                                    key={index}
-                                                >
-                                                    <img src={item.content} alt=""/>
-                                                </Grid>
-                                            )}
-                                        </React.Fragment>
-                                    ))}
-                                </Grid>
-                            </TabPanel>
-                            <TabPanel value="3">
-                                <Grid container className="justify-center align-items-center">
-                                    {_.map(woundsAssets.tabs, (item: any, index: number) => (
-                                        <React.Fragment>
-                                            {item.section.includes("4-image") && (
-                                                <Grid
-                                                    item
-                                                    md={12}
-                                                    className="lg:pr-12 xl:pr-12 container-tab"
-                                                    key={index}
-                                                >
-                                                    <img src={item.content} alt=""/>
-                                                </Grid>
-                                            )}
-                                        </React.Fragment>
-                                    ))}
-                                </Grid>
-                            </TabPanel>
-                            <TabPanel value="4">
-                                <Grid container className="justify-center align-items-center">
-                                    {_.map(woundsAssets.tabs, (item: any, index: number) => (
-                                        <React.Fragment>
-                                            {item.section.includes("5-image") && (
-                                                <Grid
-                                                    item
-                                                    md={12}
-                                                    className="lg:pr-12 xl:pr-12 container-tabzx"
-                                                    key={index}
-                                                >
-                                                    <img src={item.content} alt=""/>
-                                                </Grid>
-                                            )}
-                                        </React.Fragment>
-                                    ))}
-                                </Grid>
-                            </TabPanel>
-                        </TabContext>
-                    </Box>
-                </StyledTabContainer>
+                        <Box
+                            style={{marginLeft: "4%", marginTop: "1.7%"}}
+                            sx={{
+                                width: "100%",
+                                typography: "body1",
+                            }}
+                        >
+                            <TabContext value={value}>
+                                <Box sx={{borderBottom: 1, borderColor: "transparent"}}>
+                                    <TabList
+                                        onChange={handleChange}
+                                        aria-label="lab API tabs example"
+                                        className="tabs"
+                                    >
+                                        {_.map(tabs, (item: any, index: number) => (
+                                            <Tab
+                                                className="mr-1 heridas-tabs"
+                                                label={item}
+                                                value={index.toString()}
+                                                style={{
+                                                    backgroundColor: "#8A8A8A",
+                                                    textTransform: "capitalize",
+                                                }}
+                                            />
+                                        ))}
+                                    </TabList>
+                                </Box>
+                                <TabPanel value="0">
+                                    <Grid container className="justify-center align-items-center">
+                                        {_.map(woundsAssets.tabs, (item: any, index: number) => (
+                                            <React.Fragment>
+                                                {item.section.includes("1-image") && (
+                                                    <Grid
+                                                        item
+                                                        md={12}
+                                                        className="lg:pr-12 xl:pr-12 container-tab"
+                                                        key={index}
+                                                    >
+                                                        <img src={item.content} alt=""/>
+                                                    </Grid>
+                                                )}
+                                            </React.Fragment>
+                                        ))}
+                                    </Grid>
+                                </TabPanel>
+                                <TabPanel value="1">
+                                    <Grid container className="justify-center align-items-center">
+                                        {_.map(woundsAssets.tabs, (item: any, index: number) => (
+                                            <React.Fragment>
+                                                {item.section.includes("2-image") && (
+                                                    <Grid
+                                                        item
+                                                        md={12}
+                                                        className="lg:pr-12 xl:pr-12 container-tab"
+                                                        key={index}
+                                                    >
+                                                        <img src={item.content} alt=""/>
+                                                    </Grid>
+                                                )}
+                                            </React.Fragment>
+                                        ))}
+                                    </Grid>
+                                </TabPanel>
+                                <TabPanel value="2">
+                                    <Grid container className="justify-center align-items-center">
+                                        {_.map(woundsAssets.tabs, (item: any, index: number) => (
+                                            <React.Fragment>
+                                                {item.section.includes("3-image") && (
+                                                    <Grid
+                                                        item
+                                                        md={12}
+                                                        className="lg:pr-12 xl:pr-12 container-tab"
+                                                        key={index}
+                                                    >
+                                                        <img src={item.content} alt=""/>
+                                                    </Grid>
+                                                )}
+                                            </React.Fragment>
+                                        ))}
+                                    </Grid>
+                                </TabPanel>
+                                <TabPanel value="3">
+                                    <Grid container className="justify-center align-items-center">
+                                        {_.map(woundsAssets.tabs, (item: any, index: number) => (
+                                            <React.Fragment>
+                                                {item.section.includes("4-image") && (
+                                                    <Grid
+                                                        item
+                                                        md={12}
+                                                        className="lg:pr-12 xl:pr-12 container-tab"
+                                                        key={index}
+                                                    >
+                                                        <img src={item.content} alt=""/>
+                                                    </Grid>
+                                                )}
+                                            </React.Fragment>
+                                        ))}
+                                    </Grid>
+                                </TabPanel>
+                                <TabPanel value="4">
+                                    <Grid container className="justify-center align-items-center">
+                                        {_.map(woundsAssets.tabs, (item: any, index: number) => (
+                                            <React.Fragment>
+                                                {item.section.includes("5-image") && (
+                                                    <Grid
+                                                        item
+                                                        md={12}
+                                                        className="lg:pr-12 xl:pr-12 container-tabzx"
+                                                        key={index}
+                                                    >
+                                                        <img src={item.content} alt=""/>
+                                                    </Grid>
+                                                )}
+                                            </React.Fragment>
+                                        ))}
+                                    </Grid>
+                                </TabPanel>
+                            </TabContext>
+                        </Box>
+                    </StyledTabContainer>
+                </>
             )
         },
         {

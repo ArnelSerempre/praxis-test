@@ -91,90 +91,97 @@ const Epiprot: FC = (): JSX.Element => {
             title: "Epiprot®",
             content: (
                 <>
-                    {width > 1024 ? (
-                        <StyledTerapeuticNumberSection
-                            style={{backgroundSize: "104% 95%"}}
-                            background={
-                                epiprot !== undefined &&
-                                epiprot.background_description.content
-                            }
-                        >
-                            <Container>
-                                <Grid item lg={12} className="flex justify-center">
-                                    <StyledImage
-                                        style={{marginLeft: "4%", marginTop: "-4.2%"}}
-                                        src={
+                    {
+                        epiprot && (
+                            <>
+                                {width > 1024 ? (
+                                    <StyledTerapeuticNumberSection
+                                        style={{backgroundSize: "104% 95%"}}
+                                        background={
                                             epiprot !== undefined &&
-                                            epiprot.title_description.content
+                                            epiprot.background_description.content
                                         }
-                                        alt={
-                                            epiprot !== undefined && epiprot.title_description.alt
-                                        }
-                                    />
-                                </Grid>
-                                <Grid item lg={12} className="">
-                                    <StyledTitulo1
-                                        style={{
-                                            lineHeight: "1",
-                                            fontSize: "17px",
-                                            padding: "0 118px",
-                                            marginTop: "4.7%",
-                                            fontFamily: "Montserrat, medium",
-                                            color: "#666666",
-                                            textAlign: "justify"
-                                        }}
-                                        dangerouslySetInnerHTML={{
-                                            __html:
-                                                epiprot !== undefined &&
-                                                epiprot.text_description.content,
-                                        }}
-                                    ></StyledTitulo1>
-                                </Grid>
-                            </Container>
-                        </StyledTerapeuticNumberSection>
-                    ) : (
-                        <React.Fragment>
-                            <StyledSectionDescription background={epiprot.background_description.content}>
-                                <Container>
-                                    <Grid
-                                        item
-                                        xs={12}
-                                        sm={12}
-                                        md={12}
-                                        className="d-flex justify-center"
                                     >
-                                        <img
-                                            src={
-                                                epiprot !== undefined &&
-                                                epiprot.title_description.content
-                                            }
-                                            alt={
-                                                epiprot !== undefined &&
-                                                epiprot.title_description.alt
-                                            }
-                                            style={{width: width < 769 ? "45%" : "auto"}}
-                                        />
-                                    </Grid>
-                                    <Grid
-                                        item
-                                        xs={12}
-                                        sm={12}
-                                        md={12}
-                                        className="d-flex justify-center"
-                                    >
-                                        <StyledDescriptionText
-                                            className="mt-8"
-                                            dangerouslySetInnerHTML={{
-                                                __html:
-                                                    epiprot !== undefined &&
-                                                    epiprot.text_description.content,
-                                            }}
-                                        ></StyledDescriptionText>
-                                    </Grid>
-                                </Container>
-                            </StyledSectionDescription>
-                        </React.Fragment>
-                    )}
+                                        <Container>
+                                            <Grid item lg={12} className="flex justify-center">
+                                                <StyledImage
+                                                    style={{marginLeft: "4%", marginTop: "-4.2%"}}
+                                                    src={
+                                                        epiprot !== undefined &&
+                                                        epiprot.title_description.content
+                                                    }
+                                                    alt={
+                                                        epiprot !== undefined && epiprot.title_description.alt
+                                                    }
+                                                />
+                                            </Grid>
+                                            <Grid item lg={12} className="">
+                                                <StyledTitulo1
+                                                    style={{
+                                                        lineHeight: "1",
+                                                        fontSize: "17px",
+                                                        padding: "0 118px",
+                                                        marginTop: "4.7%",
+                                                        fontFamily: "Montserrat, medium",
+                                                        color: "#666666",
+                                                    }}
+                                                    dangerouslySetInnerHTML={{
+                                                        __html:
+                                                            epiprot !== undefined &&
+                                                            epiprot.text_description.content,
+                                                    }}
+                                                ></StyledTitulo1>
+                                            </Grid>
+                                        </Container>
+                                    </StyledTerapeuticNumberSection>
+                                ) : (
+                                    <React.Fragment>
+                                        <StyledSectionDescription
+                                            background={epiprot.background_description.content}
+                                        >
+                                            <Container>
+                                                <Grid
+                                                    item
+                                                    xs={12}
+                                                    sm={12}
+                                                    md={12}
+                                                    className="d-flex justify-center"
+                                                >
+                                                    <img
+                                                        src={
+                                                            epiprot !== undefined &&
+                                                            epiprot.title_description.content
+                                                        }
+                                                        alt={
+                                                            epiprot !== undefined &&
+                                                            epiprot.title_description.alt
+                                                        }
+                                                        style={{width: width < 769 ? "45%" : "auto"}}
+                                                    />
+                                                </Grid>
+                                                <Grid
+                                                    item
+                                                    xs={12}
+                                                    sm={12}
+                                                    md={12}
+                                                    className="d-flex justify-center"
+                                                >
+                                                    <StyledDescriptionText
+                                                        className="mt-8"
+                                                        dangerouslySetInnerHTML={{
+                                                            __html:
+                                                                epiprot !== undefined &&
+                                                                epiprot.text_description.content,
+                                                        }}
+                                                    ></StyledDescriptionText>
+                                                </Grid>
+                                            </Container>
+                                        </StyledSectionDescription>
+                                    </React.Fragment>
+                                )}
+                            </>
+                        )
+                    }
                 </>
             ),
         },
