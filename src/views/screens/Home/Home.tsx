@@ -130,9 +130,9 @@ const Home = () => {
           </StyledGrid>
         </StyledSectionsHome>
         <Accordion
-            name="Mision, vision y valores"
-            id={"1"}
-            title="Mision, vision y valores"
+             name="Misión, visión y valores"
+             id={"1"}
+             title="Misión, visión y valores"
             expanded={expanded}
             setExpanded={setExpanded}
         >

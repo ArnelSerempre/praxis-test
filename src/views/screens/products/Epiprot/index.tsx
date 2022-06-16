@@ -86,9 +86,9 @@ const Epiprot: FC = (): JSX.Element => {
 
     const epiprotArray = [
         {
-            name: "epiprot",
-            id: "epiprot",
-            title: "Epiprot",
+            name: "Epiprot®",
+            id: "Epiprot®",
+            title: "Epiprot®",
             content: (
                 <>
                     {width > 1024 ? (
@@ -121,6 +121,7 @@ const Epiprot: FC = (): JSX.Element => {
                                             marginTop: "4.7%",
                                             fontFamily: "Montserrat, medium",
                                             color: "#666666",
+                                            textAlign: "justify"
                                         }}
                                         dangerouslySetInnerHTML={{
                                             __html:
@@ -282,6 +283,7 @@ const Epiprot: FC = (): JSX.Element => {
                                                         lineHeight: "1.2",
                                                         marginLeft: "10.7%",
                                                         width: "131%",
+                                                        textAlign: "justify"
                                                     }}
                                                     dangerouslySetInnerHTML={{
                                                         __html: epiprot.fuente_text.content,

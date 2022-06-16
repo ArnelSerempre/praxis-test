@@ -260,9 +260,9 @@ const Heridas = () => {
             )
         },
         {
-            name: "Clasificacion",
-            id: "Clasificacion",
-            title: "Clasificacion",
+            name: "Clasificación",
+            id: "Clasificación",
+            title: "Clasificación",
             content: (
                 <Grid container style={{marginTop: "2%"}}>
                     <Grid item md={12}>
@@ -582,29 +582,29 @@ const Heridas = () => {
                 </>
             )
         },
-        {
-            name: "Heridas quirúrgicas",
-            id: "Heridas quirúrgicas",
-            title: "Heridas quirúrgicas",
-            content: (
-                <>
-                    {woundsAssets.aux_person !== undefined && (
-                        <StyledContainerCase className="lg:py-16 xl:py-16 py-8 mt-8">
-                            <Container maxWidth="lg">
-                                <StyledTitleCase className="lg:pb-12 xl:pb-12 pb-8 lg:text-center xl:text-center">
-                                    En caso de atender a una persona herida:
-                                </StyledTitleCase>
-                            </Container>
-                            <StyledDescriptionCase
-                                dangerouslySetInnerHTML={{
-                                    __html: woundsAssets.aux_person.content,
-                                }}
-                            ></StyledDescriptionCase>
-                        </StyledContainerCase>
-                    )}
-                </>
-            )
-        },
+        // {
+        //     name: "Heridas quirúrgicas",
+        //     id: "Heridas quirúrgicas",
+        //     title: "Heridas quirúrgicas",
+        //     content: (
+        //         <>
+        //             {woundsAssets.aux_person !== undefined && (
+        //                 <StyledContainerCase className="lg:py-16 xl:py-16 py-8 mt-8">
+        //                     <Container maxWidth="lg">
+        //                         <StyledTitleCase className="lg:pb-12 xl:pb-12 pb-8 lg:text-center xl:text-center">
+        //                             En caso de atender a una persona herida:
+        //                         </StyledTitleCase>
+        //                     </Container>
+        //                     <StyledDescriptionCase
+        //                         dangerouslySetInnerHTML={{
+        //                             __html: woundsAssets.aux_person.content,
+        //                         }}
+        //                     ></StyledDescriptionCase>
+        //                 </StyledContainerCase>
+        //             )}
+        //         </>
+        //     )
+        // },
         {
             name: "Una herida quirúrgica",
             id: "Una herida quirúrgica",
@@ -698,9 +698,9 @@ const Heridas = () => {
             )
         },
         {
-            name: "Caracteristicas de una herida quirurgica",
-            id: "Caracteristicas de una herida quirurgica",
-            title: "Caracteristicas de una herida quirurgica",
+            name: "Característica de una herida quirúrgica",
+            id: "Características de una herida quirúrgica",
+            title: "Características de una herida quirúrgica",
             content: (
                 <StyledTerapeuticNumberSection1
                     style={{backgroundRepeat: "no-repeat"}}

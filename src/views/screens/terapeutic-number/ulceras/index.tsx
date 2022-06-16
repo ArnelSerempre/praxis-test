@@ -29,9 +29,9 @@ const Ulceras = () => {
 
     const ulceArray = [
         {
-            name: "Ulceras",
-            id: "Ulceras",
-            title: "Ulceras",
+            name: "Úlceras",
+            id: "Úlceras",
+            title: "Úlceras",
             content: (
                 <>
                     {
@@ -239,9 +239,9 @@ const Ulceras = () => {
             )
         },
         {
-            name: "Donde pueden ocurrir las lesiones por presion",
-            id: "Donde pueden ocurrir las lesiones por presion",
-            title: "Donde pueden ocurrir las lesiones por presion",
+            name: "¿Dónde pueden ocurrir las lesiones por presión?",
+            id: "¿Dónde pueden ocurrir las lesiones por presión?",
+            title: "¿Dónde pueden ocurrir las lesiones por presión?",
             content: (
                 <>
                     {

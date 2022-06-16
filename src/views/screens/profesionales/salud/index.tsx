@@ -53,9 +53,9 @@ const Salud = () => {
     const saludArray: any[] = [
 
         {
-            name: "descripcion",
-            id: "descripcion",
-            title: "descripcion",
+            name: "Factor de crecimiento epidérmico",
+            id: "Factor de crecimiento epidérmico",
+            title: "Factor de crecimiento epidérmico",
             content: (
                 <Grid item md={12} className="xl:pb-12 pb-6">
                     {width > 1024 && cuidadores ? (

@@ -25,9 +25,9 @@ const useDiabetes = (width: number, woundsAssets: any) => {
 
     const diabetesContent: IAccordionProps[] = [
         {
-            name: "Descripcion",
-            id: "Descripcion",
-            title: "Descripcion",
+            name: "Diabetes",
+            id: "Diabetes",
+            title: "Diabetes",
             children: (
                 <>
                     {

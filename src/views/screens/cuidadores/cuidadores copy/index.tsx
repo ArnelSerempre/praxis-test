@@ -1,10 +1,10 @@
-import {Container, Grid, Tab, Box} from "@mui/material";
+import { Container, Grid, Tab, Box } from "@mui/material";
 import useControllers from "controllers";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import useCuidadoresStyles from "../cuidadores.styles";
 import _ from "lodash";
 import TabPanel from "@mui/lab/TabPanel";
-import {TabContext, TabList} from "@mui/lab";
+import { TabContext, TabList } from "@mui/lab";
 import "styles/styles.scss";
 import {
     StyledImageGeneral,
@@ -16,20 +16,20 @@ import {
     StyledTitleReferences,
     StyledWounds1Image,
 } from "views/screens/terapeutic-number/Heridas/heridas.responsive.styles";
-import {Modal} from "@mui/material";
-import {Button} from "@mui/material";
+import { Modal } from "@mui/material";
+import { Button } from "@mui/material";
 import Accordion from "../../../components/Accordion";
 
 const TuPapel = () => {
     // Styles
-    const {StyledImage, StyledSectionBlue, StyledTitulo, StyledTitulo1} =
+    const { StyledImage, StyledSectionBlue, StyledTitulo, StyledTitulo1 } =
         useCuidadoresStyles();
 
     // Controllers
-    const {useScreenHooks} = useControllers();
-    const {useProducts} = useScreenHooks();
-    const {products} = useProducts();
-    const {cuidadores} = products;
+    const { useScreenHooks } = useControllers();
+    const { useProducts } = useScreenHooks();
+    const { products } = useProducts();
+    const { cuidadores } = products;
 
     const data: any[] = [
         "Cuidador Formal",
@@ -121,7 +121,7 @@ const TuPapel = () => {
                                     ></StyledSubtitle>
                                 ) : (
                                     <StyledTitleFactores
-                                        style={{margin: "4% 5%"}}
+                                        style={{ margin: "4% 5%" }}
                                         dangerouslySetInnerHTML={{
                                             __html: cuidadores.papel_1.content.split("--")[0],
                                         }}
@@ -141,11 +141,12 @@ const TuPapel = () => {
                                             fontSize: "17px",
                                             width: "48%",
                                             fontWeight: "500",
+                                            textAlign: "justify",
                                         }}
                                     ></p>
                                 ) : (
                                     <StyledDescripcionFactores
-                                        style={{margin: "4% 5%"}}
+                                        style={{ margin: "4% 5%" }}
                                         dangerouslySetInnerHTML={{
                                             __html: cuidadores.papel_1.content.split("--")[1],
                                         }}
@@ -180,7 +181,7 @@ const TuPapel = () => {
                 <>
                     {
                         cuidadores && (
-                            <Container style={{marginTop: "2%"}}>
+                            <Container style={{ marginTop: "2%" }}>
                                 {width > 1024 && cuidadores ? (
                                     <React.Fragment>
                                         <StyledTitulo
@@ -210,10 +211,10 @@ const TuPapel = () => {
                                     </React.Fragment>
                                 ) : (
                                     <React.Fragment>
-                                        <StyledTitleFactores style={{margin: "4% 0%"}}>
+                                        <StyledTitleFactores style={{ margin: "4% 0%" }}>
                                             {cuidadores.title_clasification.content}
                                         </StyledTitleFactores>
-                                        <StyledDescripcionFactores style={{margin: "4% 0%"}}>
+                                        <StyledDescripcionFactores style={{ margin: "4% 0%" }}>
                                             {cuidadores.text_clasification.content}
                                         </StyledDescripcionFactores>
                                     </React.Fragment>
@@ -221,16 +222,16 @@ const TuPapel = () => {
 
                                 <Grid item md={12} className="pt-8">
                                     <div className="cuadroazul">
-                                        <Box sx={{typography: "body1"}}>
+                                        <Box sx={{ typography: "body1" }}>
                                             <TabContext value={value}>
-                                                <Box sx={{borderBottom: 1, borderColor: "divider"}}>
+                                                <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
                                                     <TabList
                                                         onChange={handleChange}
                                                         aria-label="lab API tabs example"
                                                     >
                                                         {_.map(data, (item: any, index: number) => (
                                                             <Tab
-                                                                style={{textTransform: "capitalize"}}
+                                                                style={{ textTransform: "capitalize" }}
                                                                 className="mr-1 tad-cuidadores"
                                                                 label={item}
                                                                 value={index.toString()}
@@ -242,7 +243,7 @@ const TuPapel = () => {
                                                     <TabPanel value={index.toString()}>
                                                         <img
                                                             src={item.content}
-                                                            style={{width: "100%"}}
+                                                            style={{ width: "100%" }}
                                                             alt=""
                                                         />
                                                     </TabPanel>
@@ -287,6 +288,7 @@ const TuPapel = () => {
                                                 marginTop: "-1.7%",
                                                 marginLeft: "5%",
                                                 fontFamily: "Montserrat, medium",
+                                                textAlign: "justify",
                                                 color: "#666666",
                                                 fontSize: "17px",
                                                 fontWeight: "500",
@@ -299,11 +301,11 @@ const TuPapel = () => {
                                     </React.Fragment>
                                 ) : (
                                     <React.Fragment>
-                                        <StyledTitleFactores style={{margin: "4% 0"}}>
+                                        <StyledTitleFactores style={{ margin: "4% 0" }}>
                                             {cuidadores.title_why.content}
                                         </StyledTitleFactores>
                                         <StyledDescripcionFactores
-                                            style={{margin: "4% 0"}}
+                                            style={{ margin: "4% 0" }}
                                             dangerouslySetInnerHTML={{
                                                 __html: cuidadores.text_why.content,
                                             }}
@@ -357,16 +359,16 @@ const TuPapel = () => {
                                         <StyledImageGeneral
                                             src={cuidadores.aliados_imagen_2.content}
                                             alt={cuidadores.aliados_imagen_2.alt}
-                                            style={{width: "81%", marginLeft: "11.6%", marginTop: "3%"}}
+                                            style={{ width: "81%", marginLeft: "11.6%", marginTop: "3%" }}
                                         />
                                     </React.Fragment>
                                 ) : (
                                     <React.Fragment>
-                                        <StyledTitleFactores style={{margin: "4% 0"}}>
+                                        <StyledTitleFactores style={{ margin: "4% 0" }}>
                                             {cuidadores.aliados_titulo_3.content}
                                         </StyledTitleFactores>
                                         <StyledDescripcionFactores
-                                            style={{margin: "4% 0"}}
+                                            style={{ margin: "4% 0" }}
                                             dangerouslySetInnerHTML={{
                                                 __html: cuidadores.aliados_texto_3.content,
                                             }}
@@ -417,6 +419,8 @@ const TuPapel = () => {
                                                 fontSize: "17px",
                                                 fontWeight: "500",
                                                 lineHeight: "1.2",
+                                                textAlign: "justify",
+
                                             }}
                                             dangerouslySetInnerHTML={{
                                                 __html: cuidadores.aliados_texto_4.content,
@@ -425,12 +429,12 @@ const TuPapel = () => {
                                     </React.Fragment>
                                 ) : (
                                     <React.Fragment>
-                                        <StyledTitleFactores style={{margin: "4% 0"}}>
+                                        <StyledTitleFactores style={{ margin: "4% 0" }}>
                                             {cuidadores.aliados_titulo_4.content}
                                         </StyledTitleFactores>
 
                                         <StyledDescripcionFactores
-                                            style={{margin: "4% 0"}}
+                                            style={{ margin: "4% 0" }}
                                             dangerouslySetInnerHTML={{
                                                 __html: cuidadores.aliados_texto_4.content,
                                             }}
@@ -472,17 +476,17 @@ const TuPapel = () => {
                                                 <StyledImageGeneral
                                                     src={cuidadores.aliados_imagen_3.content}
                                                     alt={cuidadores.aliados_imagen_3.alt}
-                                                    style={{width: "100%"}}
+                                                    style={{ width: "100%" }}
                                                 />
                                                 <StyledImageGeneral
                                                     src={cuidadores.aliados_imagen_4.content}
                                                     alt={cuidadores.aliados_imagen_4.alt}
-                                                    style={{width: "100%"}}
+                                                    style={{ width: "100%" }}
                                                 />
                                                 <StyledImageGeneral
                                                     src={cuidadores.aliados_imagen_5.content}
                                                     alt={cuidadores.aliados_imagen_5.alt}
-                                                    style={{width: "100%"}}
+                                                    style={{ width: "100%" }}
                                                 />
                                             </Container>
                                             {/* disminuir sobrecarga */}
@@ -497,7 +501,7 @@ const TuPapel = () => {
                                             <StyledImageGeneral
                                                 src={cuidadores.cuidador_responsive_disminuir.content}
                                                 alt={cuidadores.cuidador_responsive_disminuir.alt}
-                                                style={{width: "100%"}}
+                                                style={{ width: "100%" }}
                                             />
                                         </Container>
                                         {/* disminuir sobrecarga */}
