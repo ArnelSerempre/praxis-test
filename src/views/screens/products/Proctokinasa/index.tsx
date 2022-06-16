@@ -103,7 +103,9 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                 md={12}
                                                 className="d-flex justify-center"
                                             >
-                                                <StyledDescriptionText>
+                                                <StyledDescriptionText
+                                                    style={{ textAlign: "justify" }}
+                                                >
                                                     {proctokinasa.vulcosan_texto_1.content}
                                                 </StyledDescriptionText>
                                             </Grid>
@@ -182,8 +184,11 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                                 />
                                                             </Grid>
                                                             <Grid item xs={12} sm={12} md={12} className="mt-6">
-                                                                <StyledTitleText>{item.title}</StyledTitleText>
+                                                                <StyledTitleText
+                                                                    style={{ textAlign: "justify" }}
+                                                                >{item.title}</StyledTitleText>
                                                                 <StyledDescriptionText
+                                                                    style={{ textAlign: "justify" }}
                                                                     dangerouslySetInnerHTML={{
                                                                         __html: item.text,
                                                                     }}
@@ -390,6 +395,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                             ></StyledTitleText>
 
                                                             <StyledDescriptionText
+                                                                style={{ textAlign: "justify" }}
                                                                 dangerouslySetInnerHTML={{
                                                                     __html:
                                                                         proctokinasa.references.content.split("--")[1],

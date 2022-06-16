@@ -1,6 +1,6 @@
-import {Container, Grid} from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import useControllers from "controllers";
-import React, {FC, useState} from "react";
+import React, { FC, useState } from "react";
 import useProductsStyles from "../products.style";
 import {
     StyledImageGeneral,
@@ -26,11 +26,11 @@ const Bulcosan: FC = (): JSX.Element => {
     } = useProductsStyles();
 
     // Products
-    const {useScreenHooks} = useControllers();
-    const {useProducts} = useScreenHooks();
-    const {products} = useProducts();
+    const { useScreenHooks } = useControllers();
+    const { useProducts } = useScreenHooks();
+    const { products } = useProducts();
 
-    const {bulcosan} = products;
+    const { bulcosan } = products;
 
     /** States */
     const [width, setWidth] = useState<number>(window.innerWidth);
@@ -50,7 +50,7 @@ const Bulcosan: FC = (): JSX.Element => {
                             <>
                                 {width > 1024 ? (
                                     <StyledTerapeuticNumberSection
-                                        style={{backgroundSize: "104% 96%"}}
+                                        style={{ backgroundSize: "104% 96%" }}
                                         background={bulcosan.background_description.content}
                                     >
                                         <Container>
@@ -80,7 +80,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                                     }}
                                                     dangerouslySetInnerHTML={{
                                                         __html:
-                                                        bulcosan.vulcosan_texto_1.content,
+                                                            bulcosan.vulcosan_texto_1.content,
                                                     }}
                                                 ></StyledTitulo1>
                                             </Grid>
@@ -102,7 +102,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                                 <img
                                                     src={bulcosan.vulcosan_titulo_1.content}
                                                     alt={bulcosan.vulcosan_titulo_1.alt}
-                                                    style={{width: width < 769 ? "45%" : "auto"}}
+                                                    style={{ width: width < 769 ? "45%" : "auto" }}
                                                 />
                                             </Grid>
                                             <Grid
@@ -113,6 +113,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                                 className="d-flex justify-center"
                                             >
                                                 <StyledDescriptionText
+                                                    style={{ textAlign: "justify" }}
                                                     className="mt-8"
                                                     dangerouslySetInnerHTML={{
                                                         __html:
@@ -213,7 +214,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                                     <StyledImageResponsive
                                                         src={bulcosan.are_infectada.content}
                                                         alt={bulcosan.are_infectada.alt}
-                                                        style={{maxWidth: "100%"}}
+                                                        style={{ maxWidth: "100%" }}
                                                     />
                                                 </Grid>
                                                 <Container>
@@ -229,6 +230,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                                             }}
                                                         ></StyledDescriptionText>
                                                         <StyledDescriptionText
+                                                            style={{ textAlign: "justify" }}
                                                             dangerouslySetInnerHTML={{
                                                                 __html: bulcosan.indicaciones.content.split("--")[2],
                                                             }}
@@ -333,7 +335,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                                 <StyledImageResponsive
                                                     src={bulcosan.caracteristicas_responsive.content}
                                                     alt={bulcosan.caracteristicas_responsive.alt}
-                                                    style={{maxWidth: "100%"}}
+                                                    style={{ maxWidth: "100%" }}
                                                 />
                                             </Grid>
                                             <Container>
@@ -406,7 +408,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                                 <StyledImageResponsive
                                                     src={bulcosan.ventaja_responsive1.content}
                                                     alt={bulcosan.ventaja_responsive1.alt}
-                                                    style={{maxWidth: "100%"}}
+                                                    style={{ maxWidth: "100%" }}
                                                 />
                                             </Grid>
                                             <Grid item xs={12} sm={12} md={12} className="mt-6">
@@ -453,7 +455,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                             <StyledImageGeneral
                                                 src={bulcosan.aplicacion_image.content}
                                                 alt={bulcosan.aplicacion_image.alt}
-                                                style={{width: "100%", marginLeft: "4%", marginTop: "1%"}}
+                                                style={{ width: "100%", marginLeft: "4%", marginTop: "1%" }}
                                             />
                                         </Grid>
                                         <StyledTitulo
@@ -519,7 +521,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                             <StyledImageResponsive
                                                 src={bulcosan.tabla_responsive_aplicacion.content}
                                                 alt={bulcosan.tabla_responsive_aplicacion.alt}
-                                                style={{maxWidth: "80%"}}
+                                                style={{ maxWidth: "80%" }}
                                             />
                                         </Grid>
                                         <Container>
@@ -537,7 +539,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                             <StyledImageResponsive
                                                 src={bulcosan.facil_manipulacion.content}
                                                 alt={bulcosan.facil_manipulacion.alt}
-                                                style={{maxWidth: "80%"}}
+                                                style={{ maxWidth: "80%" }}
                                             />
                                         </Grid>
                                     </>

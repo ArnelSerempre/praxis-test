@@ -1,15 +1,15 @@
-import {Container, Grid} from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import useControllers from "controllers";
-import React, {FC, useState} from "react";
+import React, { FC, useState } from "react";
 import useProductsStyles from "../products.style";
 import Login from "views/screens/Login";
 import useModels from "models";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import {
     StyledImageGeneral,
     StyledSubtitle,
 } from "views/screens/terapeutic-number/terapeutic-number.style";
-import {StyledWounds1Image} from "views/screens/terapeutic-number/Heridas/heridas.responsive.styles";
+import { StyledWounds1Image } from "views/screens/terapeutic-number/Heridas/heridas.responsive.styles";
 import {
     StyledDescriptionText,
     StyledSectionDescription,
@@ -17,9 +17,9 @@ import {
     StyledImageResponsive,
     StyledDescriptionWhiteText,
 } from "./epiprot.responsive.styles";
-import {Modal} from "@mui/material";
-import {Box} from "@mui/material";
-import {Button} from "@mui/material";
+import { Modal } from "@mui/material";
+import { Box } from "@mui/material";
+import { Button } from "@mui/material";
 import Accordion from "../../../components/Accordion";
 
 const Epiprot: FC = (): JSX.Element => {
@@ -31,15 +31,15 @@ const Epiprot: FC = (): JSX.Element => {
         StyledTitulo,
     } = useProductsStyles();
 
-    const {useSelectors} = useModels();
-    const {useAuthSelectors} = useSelectors();
-    const {loginSelector} = useAuthSelectors();
+    const { useSelectors } = useModels();
+    const { useAuthSelectors } = useSelectors();
+    const { loginSelector } = useAuthSelectors();
     const login = useSelector(loginSelector);
 
     // Products
-    const {useScreenHooks} = useControllers();
-    const {useProducts} = useScreenHooks();
-    const {products} = useProducts();
+    const { useScreenHooks } = useControllers();
+    const { useProducts } = useScreenHooks();
+    const { products } = useProducts();
 
     const obj = {
         background:
@@ -49,7 +49,7 @@ const Epiprot: FC = (): JSX.Element => {
         height: "27.6rem",
     };
 
-    const {epiprot} = products;
+    const { epiprot } = products;
 
     const [firstImage, setFirstImage] = useState<boolean>(false);
 
@@ -96,7 +96,7 @@ const Epiprot: FC = (): JSX.Element => {
                             <>
                                 {width > 1024 ? (
                                     <StyledTerapeuticNumberSection
-                                        style={{backgroundSize: "104% 95%"}}
+                                        style={{ backgroundSize: "104% 95%" }}
                                         background={
                                             epiprot !== undefined &&
                                             epiprot.background_description.content
@@ -105,7 +105,7 @@ const Epiprot: FC = (): JSX.Element => {
                                         <Container>
                                             <Grid item lg={12} className="flex justify-center">
                                                 <StyledImage
-                                                    style={{marginLeft: "4%", marginTop: "-4.2%"}}
+                                                    style={{ marginLeft: "4%", marginTop: "-4.2%" }}
                                                     src={
                                                         epiprot !== undefined &&
                                                         epiprot.title_description.content
@@ -124,6 +124,7 @@ const Epiprot: FC = (): JSX.Element => {
                                                         marginTop: "4.7%",
                                                         fontFamily: "Montserrat, medium",
                                                         color: "#666666",
+                                                        textAlign: "justify"
                                                     }}
                                                     dangerouslySetInnerHTML={{
                                                         __html:
@@ -156,7 +157,7 @@ const Epiprot: FC = (): JSX.Element => {
                                                             epiprot !== undefined &&
                                                             epiprot.title_description.alt
                                                         }
-                                                        style={{width: width < 769 ? "45%" : "auto"}}
+                                                        style={{ width: width < 769 ? "45%" : "auto" }}
                                                     />
                                                 </Grid>
                                                 <Grid
@@ -173,6 +174,7 @@ const Epiprot: FC = (): JSX.Element => {
                                                                 epiprot !== undefined &&
                                                                 epiprot.text_description.content,
                                                         }}
+                                                        style={{ textAlign: "justify" }}
                                                     ></StyledDescriptionText>
                                                 </Grid>
                                             </Container>
@@ -315,7 +317,7 @@ const Epiprot: FC = (): JSX.Element => {
                                                 <StyledImageResponsive
                                                     src={epiprot.imagen_Responsive1.content}
                                                     alt={epiprot.imagen_Responsive1.alt}
-                                                    style={{maxWidth: "100%"}}
+                                                    style={{ maxWidth: "100%" }}
                                                 />
                                             </Grid>
                                             <Grid item xs={12} sm={12} md={12} lg={12}>
@@ -323,6 +325,7 @@ const Epiprot: FC = (): JSX.Element => {
                                                     {epiprot.fuente_title.content}
                                                 </StyledTitleText>
                                                 <StyledDescriptionText
+                                                    style={{ textAlign: "justify" }}
                                                     dangerouslySetInnerHTML={{
                                                         __html: epiprot.fuente_text.content,
                                                     }}
@@ -352,7 +355,7 @@ const Epiprot: FC = (): JSX.Element => {
                                             <StyledImageGeneral
                                                 src={epiprot.contraindicaciones.content}
                                                 alt={epiprot.contraindicaciones.alt}
-                                                style={{width: "98%", marginLeft: "3%"}}
+                                                style={{ width: "98%", marginLeft: "3%" }}
                                             />
                                         </Grid>
                                         <Grid container className="justify-center">
@@ -467,6 +470,8 @@ const Epiprot: FC = (): JSX.Element => {
                                                     Información para prescribir
                                                 </StyledTitleText>
                                                 <StyledDescriptionText
+                                                    style={{ textAlign: "justify" }}
+
                                                     dangerouslySetInnerHTML={{
                                                         __html: epiprot.info_prescribir.content,
                                                     }}
@@ -490,6 +495,8 @@ const Epiprot: FC = (): JSX.Element => {
                                     ></StyledTitulo1>
                                 ) : (
                                     <StyledDescriptionText
+                                        style={{ textAlign: "justify" }}
+
                                         dangerouslySetInnerHTML={{
                                             __html: epiprot.categoria_text.content,
                                         }}
@@ -543,7 +550,7 @@ const Epiprot: FC = (): JSX.Element => {
                                                     </Grid>
                                                     <Grid item xs={12} sm={12} md={12}>
                                                         <StyledDescriptionText
-                                                            style={{textAlign: "justify"}}
+                                                            style={{ textAlign: "justify" }}
                                                             dangerouslySetInnerHTML={{
                                                                 __html: epiprot.centro_ingenieria.content,
                                                             }}
@@ -569,6 +576,8 @@ const Epiprot: FC = (): JSX.Element => {
                                     ></StyledTitulo1>
                                 ) : (
                                     <StyledDescriptionText
+                                        style={{ textAlign: "justify" }}
+
                                         dangerouslySetInnerHTML={{
                                             __html: epiprot.table_category_para.content,
                                         }}
@@ -638,12 +647,13 @@ const Epiprot: FC = (): JSX.Element => {
                                             <StyledImageResponsive
                                                 src={epiprot.iNDICACIONES_RESPONSIVE3.content}
                                                 alt={epiprot.iNDICACIONES_RESPONSIVE3.alt}
-                                                style={{maxWidth: "100%"}}
+                                                style={{ maxWidth: "100%" }}
                                             />
                                         </Grid>
                                         <Grid item xs={12} sm={12} md={12}>
                                             <StyledTitleText>Indicaciones</StyledTitleText>
                                             <StyledDescriptionText
+                                                style={{ textAlign: "justify" }}
                                                 dangerouslySetInnerHTML={{
                                                     __html: epiprot.indications_text.content,
                                                 }}
@@ -726,6 +736,7 @@ const Epiprot: FC = (): JSX.Element => {
                                             }}
                                         ></StyledTitleText>
                                         <StyledDescriptionText
+                                            style={{ textAlign: "justify" }}
                                             dangerouslySetInnerHTML={{
                                                 __html: epiprot.aplicacion_text.content,
                                             }}
@@ -737,6 +748,7 @@ const Epiprot: FC = (): JSX.Element => {
                                             />
                                         </Grid>
                                         <StyledDescriptionText
+                                            style={{ textAlign: "justify" }}
                                             dangerouslySetInnerHTML={{
                                                 __html: epiprot.aplicacion_para.content,
                                             }}
@@ -771,7 +783,7 @@ const Epiprot: FC = (): JSX.Element => {
                                                     <StyledImageGeneral
                                                         src={item.content}
                                                         alt={item.alt}
-                                                        style={{width: "100%", marginLeft: "5%"}}
+                                                        style={{ width: "100%", marginLeft: "5%" }}
                                                     />
                                                 </Grid>
                                             ))}
@@ -937,7 +949,7 @@ const Epiprot: FC = (): JSX.Element => {
                         <div className="d-flex justify-center">
                             {width > 1024 ? (
                                 <StyledImage
-                                    style={{marginBottom: "5%"}}
+                                    style={{ marginBottom: "5%" }}
                                     src={epiprot !== undefined && epiprot.banner_1.content}
                                     alt={epiprot !== undefined && epiprot.banner_1.alt}
                                     onClick={() => setFirstImage(true)}
@@ -946,7 +958,7 @@ const Epiprot: FC = (): JSX.Element => {
                                 <StyledWounds1Image
                                     src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/tratamientoP.png"
                                     alt=""
-                                    style={{width: width < 769 ? "100%" : "80%"}}
+                                    style={{ width: width < 769 ? "100%" : "80%" }}
                                     onClick={() => setFirstImage(true)}
                                 />
                             )}
@@ -993,7 +1005,7 @@ const Epiprot: FC = (): JSX.Element => {
                 aria-labelledby="child-modal-title"
                 aria-describedby="child-modal-description"
             >
-                <Box sx={{...style, width: "100%"}}>
+                <Box sx={{ ...style, width: "100%" }}>
                     {/* <h2 id="child-modal-title">Gira tu pantalla</h2> */}
                     <Grid item xs={12} sm={12} md={12} className="d-flex justify-center">
                         <img
@@ -1003,7 +1015,7 @@ const Epiprot: FC = (): JSX.Element => {
                                     : "http://api-praxis.eml.com.co/wp-content/uploads/2022/04/tabla-prescribir.png"
                             }
                             alt=""
-                            style={{width: "55%"}}
+                            style={{ width: "55%" }}
                         />
                     </Grid>
 
