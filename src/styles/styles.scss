@@ -88,13 +88,13 @@
 
         a {
             &:hover {
-            color: white;
+                color: #fff !important;
 
             }
         }
         &:hover {
             background-color: #004289;
-            color: white;
+            color: #fff !important;
         }
     }
 }
