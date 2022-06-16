@@ -220,6 +220,9 @@ const Heridas = () => {
                                         </Grid>
                                         <Grid item md={12}>
                                             <StyledDescriptionWounds
+                                            style={{
+                                                textAlign: "justify"
+                                            }}
                                                 dangerouslySetInnerHTML={{
                                                     __html: woundsAssets.wounds1[1].content.split("--")[1],
                                                 }}
@@ -246,6 +249,9 @@ const Heridas = () => {
                                         </Grid>
                                         <Grid item md={12}>
                                             <StyledDescriptionWounds
+                                             style={{
+                                                textAlign: "justify"
+                                            }}
                                                 dangerouslySetInnerHTML={{
                                                     __html: woundsAssets.wounds2[1].content.split("--")[1],
                                                 }}
@@ -296,7 +302,11 @@ const Heridas = () => {
                     <StyledTitleTypesWounds>
                         Tipos de tejido en una herida
                     </StyledTitleTypesWounds>
-                    <StyledDescriptionTypesWounds>
+                    <StyledDescriptionTypesWounds
+                     style={{
+                        textAlign: "justify"
+                    }}
+                    >
                         {woundsAssets.wound_type_description !== undefined &&
                             woundsAssets.wound_type_description.content}
                     </StyledDescriptionTypesWounds>
@@ -582,29 +592,6 @@ const Heridas = () => {
                 </>
             )
         },
-        // {
-        //     name: "Heridas quirúrgicas",
-        //     id: "Heridas quirúrgicas",
-        //     title: "Heridas quirúrgicas",
-        //     content: (
-        //         <>
-        //             {woundsAssets.aux_person !== undefined && (
-        //                 <StyledContainerCase className="lg:py-16 xl:py-16 py-8 mt-8">
-        //                     <Container maxWidth="lg">
-        //                         <StyledTitleCase className="lg:pb-12 xl:pb-12 pb-8 lg:text-center xl:text-center">
-        //                             En caso de atender a una persona herida:
-        //                         </StyledTitleCase>
-        //                     </Container>
-        //                     <StyledDescriptionCase
-        //                         dangerouslySetInnerHTML={{
-        //                             __html: woundsAssets.aux_person.content,
-        //                         }}
-        //                     ></StyledDescriptionCase>
-        //                 </StyledContainerCase>
-        //             )}
-        //         </>
-        //     )
-        // },
         {
             name: "Una herida quirúrgica",
             id: "Una herida quirúrgica",
@@ -683,7 +670,7 @@ const Heridas = () => {
                                     </Grid>
                                     <Grid item xs={12} md={12} sm={12}>
                                         <StyledDescriptionEmergency
-                                            style={{paddingRight: 24}}
+                                            style={{paddingRight: 24, textAlign: "justify"}}
                                             dangerouslySetInnerHTML={{
                                                 __html:
                                                     woundsAssets.quirurgicas_text.content.split("--")[1],

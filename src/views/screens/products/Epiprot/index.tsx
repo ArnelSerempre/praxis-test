@@ -134,9 +134,7 @@ const Epiprot: FC = (): JSX.Element => {
                         </StyledTerapeuticNumberSection>
                     ) : (
                         <React.Fragment>
-                            <StyledSectionDescription
-                                background={epiprot.background_description.content}
-                            >
+                            <StyledSectionDescription background={epiprot.background_description.content}>
                                 <Container>
                                     <Grid
                                         item
@@ -399,9 +397,9 @@ const Epiprot: FC = (): JSX.Element => {
             )
         },
         {
-            name: "Informacion para prescribir",
-            id: "Informacion para prescribir",
-            title: "Informacion para prescribir",
+            name: "Información para prescribir",
+            id: "Información para prescribir",
+            title: "Información para prescribir",
             content: (
                 <>
                     {
@@ -653,9 +651,9 @@ const Epiprot: FC = (): JSX.Element => {
             )
         },
         {
-            name: "Aplicacion",
-            id: "Aplicacion",
-            title: "Aplicacion",
+            name: "Aplicación",
+            id: "Aplicación",
+            title: "Aplicación",
             content: (
                 <>
                     {
@@ -745,9 +743,9 @@ const Epiprot: FC = (): JSX.Element => {
             )
         },
         {
-            name: "Condiciones de alcenamiento",
-            id: "Condiciones de alcenamiento",
-            title: "Condiciones de alcenamiento",
+            name: "Condiciones de almacenamiento",
+            id: "Condiciones de almacenamiento",
+            title: "Condiciones de almacenamiento",
             content: (
                 <>
                     {

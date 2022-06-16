@@ -1,6 +1,6 @@
-import {Container, Grid} from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import useControllers from "controllers";
-import React, {FC, useState} from "react";
+import React, { FC, useState } from "react";
 import useProductsStyles from "../products.style";
 import {
     StyledImageGeneral,
@@ -12,7 +12,7 @@ import {
     StyledSectionDescription,
     StyledTitleText,
 } from "../Epiprot/epiprot.responsive.styles";
-import {StyledTitleTypesWounds} from "views/screens/terapeutic-number/Heridas/heridas.responsive.styles";
+import { StyledTitleTypesWounds } from "views/screens/terapeutic-number/Heridas/heridas.responsive.styles";
 import Accordion from "../../../components/Accordion";
 
 const Proctokinasa: FC = (): JSX.Element => {
@@ -25,11 +25,11 @@ const Proctokinasa: FC = (): JSX.Element => {
     } = useProductsStyles();
 
     // Products
-    const {useScreenHooks} = useControllers();
-    const {useProducts} = useScreenHooks();
-    const {products} = useProducts();
+    const { useScreenHooks } = useControllers();
+    const { useProducts } = useScreenHooks();
+    const { products } = useProducts();
 
-    const {proctokinasa} = products;
+    const { proctokinasa } = products;
 
     /** States */
     const [width, setWidth] = useState<number>(window.innerWidth);
@@ -39,9 +39,9 @@ const Proctokinasa: FC = (): JSX.Element => {
 
     const proctokinasaArray: any[] = [
         {
-            name: "Descripcion",
-            id: "Descripcion",
-            title: "Descripcion",
+            name: "Proctokinasa®",
+            id: "Proctokinasa®",
+            title: "Proctokinasa®",
             content: (
                 <>
                     {
@@ -49,7 +49,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                             <>
                                 {width > 1024 ? (
                                     <StyledTerapeuticNumberSection
-                                        style={{backgroundSize: "105% 124%"}}
+                                        style={{ backgroundSize: "105% 124%" }}
                                         background={proctokinasa.background_description.content}
                                     >
                                         <Container>
@@ -74,6 +74,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                         fontSize: "17px",
                                                         color: "#666666",
                                                         marginLeft: "5.4%",
+                                                        textAlign: "justify",
                                                     }}
                                                 >
                                                     {proctokinasa.vulcosan_texto_1.content}
@@ -149,6 +150,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                                         fontFamily: "Montserrat, bold",
                                                                         color: "#666666",
                                                                         fontWeight: "500",
+                                                                        textAlign: "justify",
                                                                     }}
                                                                 ></StyledTitulo1>
                                                             </Grid>
@@ -160,7 +162,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                                 <StyledImageGeneral
                                                                     src={item.image}
                                                                     alt=""
-                                                                    style={{width: "100%"}}
+                                                                    style={{ width: "100%" }}
                                                                 />
                                                             </Grid>
                                                         </>
@@ -176,7 +178,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                                 <StyledImageResponsive
                                                                     src={item.image}
                                                                     alt=""
-                                                                    style={{width: "100%", maxWidth: "100%"}}
+                                                                    style={{ width: "100%", maxWidth: "100%" }}
                                                                 />
                                                             </Grid>
                                                             <Grid item xs={12} sm={12} md={12} className="mt-6">
@@ -204,7 +206,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                                 <StyledImageGeneral
                                                                     src={item.image}
                                                                     alt=""
-                                                                    style={{width: "100%"}}
+                                                                    style={{ width: "100%" }}
                                                                 />
                                                             </Grid>
 
@@ -242,7 +244,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                                 <StyledImageResponsive
                                                                     src={item.image}
                                                                     alt=""
-                                                                    style={{width: "100%", maxWidth: "100%"}}
+                                                                    style={{ width: "100%", maxWidth: "100%" }}
                                                                 />
                                                             </Grid>
                                                             <Grid item xs={12} sm={12} md={12} className="mt-6">
@@ -267,9 +269,9 @@ const Proctokinasa: FC = (): JSX.Element => {
             )
         },
         {
-            name: "Aplicacion",
-            id: "Aplicacion",
-            title: "Aplicacion",
+            name: "Aplicación",
+            id: "Aplicación",
+            title: "Aplicación",
             content: (
                 <>
                     {
@@ -278,7 +280,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                                 <Grid item md={12} className="mt-12">
                                     {width > 1024 ? (
                                         <React.Fragment>
-                                            <StyledTitleTypesWounds style={{marginLeft: "-2%"}}>
+                                            <StyledTitleTypesWounds style={{ marginLeft: "-2%" }}>
                                                 Aplicación
                                             </StyledTitleTypesWounds>
                                             <StyledImageGeneral
@@ -287,7 +289,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                     proctokinasa.preImage.content
                                                 }
                                                 alt=""
-                                                style={{width: "100%"}}
+                                                style={{ width: "100%" }}
                                             />
                                         </React.Fragment>
                                     ) : (
@@ -299,7 +301,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                     proctokinasa.preImage.content
                                                 }
                                                 alt=""
-                                                style={{width: "100%"}}
+                                                style={{ width: "100%" }}
                                             />
                                         </React.Fragment>
                                     )}
@@ -369,6 +371,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                                                             color: "#666666",
                                                             fontSize: "17px",
                                                             fontWeight: "500",
+                                                            textAlign: "justify",
                                                         }}
                                                     ></p>
                                                 </Grid>

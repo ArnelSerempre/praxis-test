@@ -40,9 +40,9 @@ const Bulcosan: FC = (): JSX.Element => {
 
     const bulcosanArray = [
         {
-            name: "Descripcion",
-            id: "Descripcion",
-            title: "Descripcion",
+            name: "Vulcosan®",
+            id: "Vulcosan®",
+            title: "Vulcosan®",
             content: (
                 <>
                     {
@@ -76,6 +76,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                                         fontFamily: "Montserrat, medium",
                                                         color: "#666666",
                                                         marginLeft: "5.4%",
+                                                        textAlign: "justify",
                                                     }}
                                                     dangerouslySetInnerHTML={{
                                                         __html:
@@ -187,6 +188,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                                             fontWeight: "500",
                                                             padding: "0 7%",
                                                             marginLeft: "-5%",
+                                                            textAlign: "justify",
                                                         }}
                                                     ></p>
                                                 </Grid>
@@ -198,7 +200,7 @@ const Bulcosan: FC = (): JSX.Element => {
                                                             style={{
                                                                 width: "500px",
                                                                 marginTop: "-73%",
-                                                                marginLeft: "113.1%",
+                                                                marginLeft: "108.1%",
                                                                 height: "414.6px",
                                                             }}
                                                         />
@@ -244,9 +246,9 @@ const Bulcosan: FC = (): JSX.Element => {
             )
         },
         {
-            name: "Caracteristicas y desventajas",
-            id: "Caracteristicas y desventajas",
-            title: "Caracteristicas y desventajas",
+            name: "Características y ventajas",
+            id: "Características y ventajas",
+            title: "Características y ventajas",
             content: (
                 <>
                     {
@@ -427,9 +429,9 @@ const Bulcosan: FC = (): JSX.Element => {
             )
         },
         {
-            name: "Paso A Paso",
-            id: "Paso A Paso",
-            title: "Paso A Paso",
+            name: "Aplicación y fácil manipulación",
+            id: "Aplicación y fácil manipulación",
+            title: "Aplicación y fácil manipulación",
             content: (
                 <>
                     {
