@@ -699,7 +699,6 @@ const Ulceras = () => {
                 <StyledImage
                     src={woundsAssets.ulceras_Banner_1.content}
                     alt={woundsAssets.ulceras_Banner_1.alt}
-                    style={{marginBottom: "3%"}}
                 />
             )}
             {/* BANNER PRINCIPAL */}
@@ -718,40 +717,6 @@ const Ulceras = () => {
                     ))
                 }
             </div>
-
-
-            {/* ULCERAS  */}
-            {woundsAssets.ulceras_imagen_1 && (
-                <React.Fragment>
-
-                    {/* ULCERAS  */}
-
-                    {/* PADECEN DE DEPRESION */}
-
-                    {/* PADECEN DE DEPRESION */}
-
-                    {/* lesiones presion */}
-
-                    {/* lesiones presion */}
-
-                    {/* PRESION */}
-
-                    {/* PRESION */}
-
-                    {/* CLASIFICACION */}
-
-                    {/* CLASIFICACION */}
-
-                    {/* prevenir lesiones */}
-
-                    {/* prevenir lesiones */}
-
-                    {/* REFERENCIAS */}
-
-                    {/* REFERENCIAS */}
-                </React.Fragment>
-            )}
-            {/* ULCERAS  */}
         </React.Fragment>
     );
 };

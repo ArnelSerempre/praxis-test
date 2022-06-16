@@ -81,9 +81,7 @@ export const StyledImageImportant = styled.img.attrs({
   className: "important-wounds",
 })`
   width: 1128px;
-  margin-left: 2.8%;
   margin-right: auto;
-  margin-top: -2%;
 
   @media (max-width: 1023px) {
     margin-top: 3%;

@@ -56,65 +56,10 @@ const Diabetes: FC = () => {
                 )}
 
                 {/* Description */}
-                <StyledTerapeuticNumberSection
-                    style={{backgroundSize: "109% 92%"}}
-                    background={
-                        woundsAssets.diabetes_banner_1 !== undefined &&
-                        woundsAssets.diabetes_background_1.content
-                    }
-                >
-                    <Container>
-                        <Grid item lg={12} className="text-center">
-                            {width > 1024 ? (
-                                <StyledTitulo
-                                    style={{
-                                        marginTop: "0.6%",
-                                        marginLeft: "4.3%",
-                                        fontFamily: "Montserrat, bold",
-                                        fontSize: "39px",
-                                    }}
-                                >
-                                    Diabetes
-                                </StyledTitulo>
-                            ) : (
-                                <StyledTitleFactores className="text-center">
-                                    Diabetes
-                                </StyledTitleFactores>
-                            )}
-                        </Grid>
-                        <Grid item lg={12} className="xl:text-center lg:text-center">
-                            {width > 1024 ? (
-                                <StyledTitulo1
-                                    style={{
-                                        lineHeight: "1.3",
-                                        fontSize: "17px",
-                                        padding: "0 118px",
-                                        marginTop: "2.6%",
-                                        fontFamily: "Montserrat, medium",
-                                        color: "#666666",
-                                    }}
-                                    dangerouslySetInnerHTML={{
-                                        __html:
-                                            woundsAssets.diabetes_banner_1 !== undefined &&
-                                            woundsAssets.diabetes_text_1.content,
-                                    }}
-                                ></StyledTitulo1>
-                            ) : (
-                                <StyledDescripcionFactores
-                                    className="xl:pb-12 lg:pb-12 pb-8"
-                                    dangerouslySetInnerHTML={{
-                                        __html:
-                                            woundsAssets.diabetes_banner_1 !== undefined &&
-                                            woundsAssets.diabetes_text_1.content,
-                                    }}
-                                ></StyledDescripcionFactores>
-                            )}
-                        </Grid>
-                    </Container>
-                </StyledTerapeuticNumberSection>
+
 
                 {/* Accordions */}
-                <div id="accordions">
+                <div id="my-4 accordions" style={{ marginTop: "1rem", marginBottom: "1rem" }}>
                     {_.map(diabetesContent, (item: IAccordion, index: number) => (
                         <Accordion
                             title={item.title}
