@@ -399,14 +399,77 @@ const Epiprot: FC = (): JSX.Element => {
             )
         },
         {
-            name: "Datos Principales",
-            id: "Datos Principales",
-            title: "Datos Principales",
+            name: "Informacion para prescribir",
+            id: "Informacion para prescribir",
+            title: "Informacion para prescribir",
             content: (
                 <>
                     {
                         epiprot && (
                             <>
+                                <Grid container>
+                                    {width > 1024 ? (
+                                        <React.Fragment>
+                                            <Grid item md={6}>
+                                                <StyledTitulo
+                                                    style={{
+                                                        marginTop: "7.9%",
+                                                        fontFamily: "Montserrat, bold",
+                                                        fontSize: 25,
+                                                        fontWeight: "700",
+                                                    }}
+                                                >
+                                                    Información para prescribir
+                                                </StyledTitulo>
+                                                <StyledTitulo1
+                                                    style={{
+                                                        marginTop: "-6.9%",
+                                                        fontFamily: "Montserrat, medium",
+                                                        color: "#666666",
+                                                        fontSize: 17,
+                                                        fontWeight: "600",
+                                                        lineHeight: "1.1",
+                                                        width: "108%",
+                                                        textAlign: "justify"
+                                                    }}
+                                                    dangerouslySetInnerHTML={{
+                                                        __html: epiprot.info_prescribir.content,
+                                                    }}
+                                                ></StyledTitulo1>
+                                            </Grid>
+                                            <Grid item md={6} className="">
+                                                <StyledImageGeneral
+                                                    src={epiprot.info_prescribir_image.content}
+                                                    alt={epiprot.info_prescribir_image.alt}
+                                                    style={{
+                                                        width: "100%",
+                                                    }}
+                                                />
+                                            </Grid>
+                                        </React.Fragment>
+                                    ) : (
+                                        <React.Fragment>
+                                            <Grid item xs={12} sm={12} md={12}>
+                                                <StyledImageResponsive
+                                                    src={epiprot.prescribir_1_responsive.content}
+                                                    alt={epiprot.prescribir_1_responsive.alt}
+                                                    style={{ maxWidth: "100%" }}
+
+                                                />
+                                            </Grid>
+                                            <Grid item xs={12} sm={12} md={12}>
+                                                <StyledTitleText>
+                                                    Información para prescribir
+                                                </StyledTitleText>
+                                                <StyledDescriptionText
+                                                    dangerouslySetInnerHTML={{
+                                                        __html: epiprot.info_prescribir.content,
+                                                    }}
+                                                ></StyledDescriptionText>
+                                            </Grid>
+                                        </React.Fragment>
+                                    )}
+                                </Grid>
                                 {width > 1024 ? (
                                     <StyledTitulo1
                                         style={{
@@ -414,7 +477,7 @@ const Epiprot: FC = (): JSX.Element => {
                                             color: "#666666",
                                             fontSize: 17,
                                             fontWeight: "500",
-                                            marginLeft: "10%",
+                                            textAlign: "justify"
                                         }}
                                         dangerouslySetInnerHTML={{
                                             __html: epiprot.categoria_text.content,
@@ -427,21 +490,6 @@ const Epiprot: FC = (): JSX.Element => {
                                         }}
                                     ></StyledDescriptionText>
                                 )}
-                            </>
-                        )
-                    }
-                </>
-            )
-        },
-        {
-            name: "Detalles",
-            id: "Detalles",
-            title: "Detalles",
-            content: (
-                <>
-                    {
-                        epiprot && (
-                            <>
                                 <Grid container>
                                     {epiprot.table_category !== undefined && (
                                         <Grid container className="justify-center">
@@ -453,8 +501,7 @@ const Epiprot: FC = (): JSX.Element => {
                                                             alt={epiprot.table_category.alt}
                                                             style={{
                                                                 marginTop: "2.2%",
-                                                                width: "80.5%",
-                                                                marginLeft: "22%",
+                                                                width: "80.5%"
                                                             }}
                                                         />
                                                     </Grid>
@@ -462,11 +509,11 @@ const Epiprot: FC = (): JSX.Element => {
                                                         <p
                                                             style={{
                                                                 fontSize: 17,
-                                                                marginLeft: "10.7%",
                                                                 marginTop: "22px",
                                                                 fontFamily: "Montserrat, medium",
                                                                 color: "#666666",
                                                                 fontWeight: "500",
+                                                                textAlign: "justify"
                                                             }}
                                                             dangerouslySetInnerHTML={{
                                                                 __html: epiprot.centro_ingenieria.content,
@@ -491,6 +538,7 @@ const Epiprot: FC = (): JSX.Element => {
                                                     </Grid>
                                                     <Grid item xs={12} sm={12} md={12}>
                                                         <StyledDescriptionText
+                                                            style={{textAlign: "justify"}}
                                                             dangerouslySetInnerHTML={{
                                                                 __html: epiprot.centro_ingenieria.content,
                                                             }}
@@ -505,7 +553,6 @@ const Epiprot: FC = (): JSX.Element => {
                                     <StyledTitulo1
                                         style={{
                                             fontSize: 17,
-                                            marginLeft: "10.1%",
                                             marginTop: "-57px",
                                             fontFamily: "Montserrat, medium",
                                             color: "#666666",
@@ -547,7 +594,8 @@ const Epiprot: FC = (): JSX.Element => {
                                                         fontFamily: "Montserrat, bold",
                                                         fontSize: 25,
                                                         fontWeight: "700",
-                                                        marginLeft: "10.4%",
+                                                        marginLeft: 0,
+                                                        textAlign: "justify"
                                                     }}
                                                 >
                                                     Indicaciones
@@ -561,7 +609,7 @@ const Epiprot: FC = (): JSX.Element => {
                                                         color: "#666666",
                                                         fontSize: 15,
                                                         fontWeight: "600",
-                                                        marginLeft: "10%",
+                                                        textAlign: "justify"
                                                     }}
                                                     dangerouslySetInnerHTML={{
                                                         __html: epiprot.indications_text.content,
@@ -574,9 +622,6 @@ const Epiprot: FC = (): JSX.Element => {
                                                 src={epiprot.indications_image.content}
                                                 style={{
                                                     width: "100%",
-                                                    marginTop: "-5.8%",
-                                                    height: "124%",
-                                                    marginLeft: "4.5%",
                                                 }}
                                                 alt={epiprot.indications_image.alt}
                                             />
