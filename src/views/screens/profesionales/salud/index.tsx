@@ -148,7 +148,7 @@ const Salud = () => {
                                 style={{width: "80%"}}
                             />
                         </Grid>
-                        <div className="my-4">
+                        <div className="my-4" id="accordions">
                             {
                                 cuidadores && saludArray.map((item: any, index: number) => (
                                     <Accordion

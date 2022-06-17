@@ -430,7 +430,7 @@ const Proctokinasa: FC = (): JSX.Element => {
                         src={proctokinasa.banner_principal.content}
                         alt={proctokinasa.banner_principal.alt}
                     />
-                    <div className="my-4">
+                    <div className="my-4" id="accordions">
                         {
                             proctokinasaArray.map((item: any, index: number) => (
                                 <Accordion

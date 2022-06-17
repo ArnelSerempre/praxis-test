@@ -702,7 +702,7 @@ const Ulceras = () => {
                 />
             )}
             {/* BANNER PRINCIPAL */}
-            <div className="my-4">
+            <div className="my-4" id="accordions">
                 {
                     ulceArray.map((item: any, index: number) => (
                         <Accordion

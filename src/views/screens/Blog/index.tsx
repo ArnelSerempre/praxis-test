@@ -41,6 +41,9 @@ const Blog: FC = (): JSX.Element => {
               src={postsAssets.blog_banner_principal?.content}
               alt="Blog's Banner Image"
             />
+            <div id="accordions">
+
+            
             <StyledBlogFirstSection
               style={{
                 backgroundSize: width > 1024 ? "108% 100%" : "100% 100%",
@@ -306,6 +309,7 @@ const Blog: FC = (): JSX.Element => {
                 </Grid>
               </Container>
             </StyledContainer2>
+            </div>
           </React.Fragment>
         )}
         {/* 

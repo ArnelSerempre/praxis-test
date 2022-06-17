@@ -1206,7 +1206,7 @@ const Heridas = () => {
                     woundsAssets.principal_banner.alt
                 }
             />
-            <div className="mt-4">
+            <div className="mt-4" id="accordions">
                 {
                     mapContent.map((item: any, index: any) => (
                         <Accordion

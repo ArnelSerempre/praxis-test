@@ -526,7 +526,7 @@ const TuPapel = () => {
                             alt={cuidadores.principal.alt}
                         />
                         {/* Banner */}
-                        <div className="my-4">
+                        <div className="my-4" id="accordions">
                             {
                                 tuPapelArray.map((item: any, index: number) => (
                                     <Accordion

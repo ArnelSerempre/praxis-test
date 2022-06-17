@@ -978,7 +978,7 @@ const Epiprot: FC = (): JSX.Element => {
                                 alt={epiprot !== undefined && epiprot.principal_banner.alt}
                             />
                             {/* banner principal */}
-                            <div className="my-4">
+                            <div className="my-4" id="accordions">
                                 {
                                     epiprotArray.map((item: any, index: number) => (
                                         <Accordion

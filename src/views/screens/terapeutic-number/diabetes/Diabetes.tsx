@@ -59,7 +59,7 @@ const Diabetes: FC = () => {
 
 
                 {/* Accordions */}
-                <div id="my-4 accordions" style={{ marginTop: "1rem", marginBottom: "1rem" }}>
+                <div id="accordions" style={{ marginTop: "1rem", marginBottom: "1rem" }}>
                     {_.map(diabetesContent, (item: IAccordion, index: number) => (
                         <Accordion
                             title={item.title}

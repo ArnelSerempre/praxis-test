@@ -638,7 +638,7 @@ const Bulcosan: FC = (): JSX.Element => {
                         alt={bulcosan.banner_principal.alt}
                     />
                     {/* banner */}
-                    <div className="my-4">
+                    <div className="my-4" id="accordions">
                         {
                             bulcosanArray.map((item: any, index: number) => (
                                 <Accordion
