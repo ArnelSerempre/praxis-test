@@ -14,6 +14,7 @@ const GeneralLayout: FC = ({ children }): JSX.Element => {
 
   const { pathname } = window.location;
   const documentInComponent = document.getElementById("accordions")
+
   useEffect(() => {
     if (
       pathname.includes("/detail") ||
@@ -23,10 +24,10 @@ const GeneralLayout: FC = ({ children }): JSX.Element => {
       pathname.includes("/contact/form")
     ) {
       setIsPathname(false);
-    }else if(documentInComponent === null){
-      setIsPathname(false)
+    }else{
+      setIsPathname(true);
     }
-  }, [pathname])
+  }, [pathname, documentInComponent])
 
   return (
     <div>
