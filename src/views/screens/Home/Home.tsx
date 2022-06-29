@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import useControllers from "controllers";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import {
   StyledContainer,
   StyledGrid,
@@ -11,7 +11,6 @@ import {
   StyledSectionsHome,
   StyledTitleSection
 } from "./home.styles";
-import Accordion from "../../components/Accordion";
 
 const Home = () => {
   // Controllers
@@ -25,9 +24,6 @@ const Home = () => {
     hover
   } = useHome();
   const { content } = useContentHome();
-
-  /** States */
-  const [expanded, setExpanded] = useState<string | false>(false);
 
   return width >= 1024 ? (
     <Fragment>
@@ -130,24 +126,8 @@ const Home = () => {
           </StyledGrid>
         </StyledSectionsHome>
         <div className="my-4" id="accordions">
-          <Accordion
-            name="Misión, visión y valores"
-            id={"1"}
-            title="Misión, visión y valores"
-            expanded={expanded}
-            setExpanded={setExpanded}
-          >
             <img src={content.misionVision.content} alt={content.misionVision.alt} />
-          </Accordion>
-          <Accordion
-            name="gerencialTeam"
-            id={"1"}
-            title="Equipo gerencial"
-            expanded={expanded}
-            setExpanded={setExpanded}
-          >
             <img src={content.gerencialTeam.content} alt={content.gerencialTeam.alt} />
-          </Accordion>
         </div>
       </StyledContainer>
     </Fragment>
@@ -252,24 +232,8 @@ const Home = () => {
           </StyledGrid>
         </StyledSectionsHome>
         <div className="my-4" id="accordions">
-          <Accordion
-            name="Mision, vision y valores"
-            id={"1"}
-            title="Mision, vision y valores"
-            expanded={expanded}
-            setExpanded={setExpanded}
-          >
             <img src={content.misionResponsive.content} alt={content.misionResponsive.alt} />
-          </Accordion>
-          <Accordion
-            name="gerencialTeam"
-            id={"1"}
-            title="Equipo gerencial"
-            expanded={expanded}
-            setExpanded={setExpanded}
-          >
-            <img src={content.gerencialResponsive.content} alt={content.gerencialResponsive.alt} />
-          </Accordion>
+            <img src={content.gerencialResponsive.content} alt={content.gerencialResponsive.alt} className="mt-4"/>
         </div>
       </StyledContainer>
     </Fragment>
