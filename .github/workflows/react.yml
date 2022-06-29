@@ -27,4 +27,4 @@ jobs:
           username: "root_prod@praxispharmaceutical.com.co"
           password: "Praxis123*"
           server-dir: "/"
-          local-dir: "build"
+          local-dir: "build/"
