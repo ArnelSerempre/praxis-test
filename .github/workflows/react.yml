@@ -13,13 +13,6 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14.x
-          cache: 'npm'
-      - run: npm i
-      - run: npm run build
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
