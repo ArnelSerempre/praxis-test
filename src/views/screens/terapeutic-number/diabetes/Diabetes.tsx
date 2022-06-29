@@ -5,12 +5,6 @@ import _ from "lodash";
 import {IAccordion} from "views/components/Accordion/Accordion.interfaces";
 import {StyledContainerDiabetes} from "./Diabetes.styles";
 import useTerapeuticNumberStyles from "../terapeutic-number.style";
-import {Container} from "@mui/material";
-import {Grid} from "@mui/material";
-import {
-    StyledDescripcionFactores,
-    StyledTitleFactores,
-} from "../Heridas/heridas.responsive.styles";
 
 const Diabetes: FC = () => {
     /** Components */
@@ -32,10 +26,7 @@ const Diabetes: FC = () => {
 
     /** Styles */
     const {
-        StyledImage,
-        StyledTerapeuticNumberSection,
-        StyledTitulo,
-        StyledTitulo1,
+        StyledImage
     } = useTerapeuticNumberStyles();
 
     return (

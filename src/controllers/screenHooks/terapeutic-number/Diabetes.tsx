@@ -14,7 +14,6 @@ import useTerapeuticNumberStyles, {
     StyledImageGeneral,
     StyledSubtitle,
 } from "views/screens/terapeutic-number/terapeutic-number.style";
-import diabetes from "../../../views/screens/terapeutic-number/diabetes";
 
 const useDiabetes = (width: number, woundsAssets: any) => {
     const {

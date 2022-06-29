@@ -16,8 +16,6 @@ import {
     StyledTitleReferences,
     StyledWounds1Image,
 } from "views/screens/terapeutic-number/Heridas/heridas.responsive.styles";
-import { Modal } from "@mui/material";
-import { Button } from "@mui/material";
 import Accordion from "../../../components/Accordion";
 
 const TuPapel = () => {
@@ -49,27 +47,12 @@ const TuPapel = () => {
     const [width, setWidth] = useState<number>(window.innerWidth);
 
     window.addEventListener("resize", () => setWidth(window.innerWidth));
-
+    // eslint-disable-next-line
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => {
         setOpen(true);
     };
-    const handleClose = () => {
-        setOpen(false);
-    };
-
-    const style = {
-        position: "absolute" as "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        width: 400,
-        bgcolor: "background.paper",
-        boxShadow: 24,
-        pt: 2,
-        px: 4,
-        pb: 3,
-    };
+    
 
     const [expanded, setExpanded] = useState<string | false>(false);
 

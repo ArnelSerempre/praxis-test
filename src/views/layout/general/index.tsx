@@ -1,8 +1,6 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import useComponents from "views/components";
 import "animate.css";
-import Flecha from "assets/scrolldown-1.gif";
-import Flecha1 from "assets/gif-mouse.gif";
 import WhatsApp from "assets/whatsapp-logo-11.png";
 
 const GeneralLayout: FC = ({ children }): JSX.Element => {

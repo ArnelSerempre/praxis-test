@@ -74,6 +74,7 @@ const useContentHome = () => {
       },
       onError: (error: any) => console.log(error)
     }));
+    // eslint-disable-next-line
   }, []);
 
   return {
