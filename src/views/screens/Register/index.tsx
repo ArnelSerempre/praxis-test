@@ -1,9 +1,19 @@
-import { Checkbox, Container, FormControlLabel, Grid, TextField } from "@mui/material";
+import {
+  Checkbox,
+  Container,
+  FormControlLabel,
+  Grid,
+  TextField,
+} from "@mui/material";
 import React, { FC, useState } from "react";
 import useLoginStyles from "./register.styles";
 import useControllers from "controllers";
 import { Controller } from "react-hook-form";
 import { StyledTitleFactores } from "../terapeutic-number/Heridas/heridas.responsive.styles";
+import { Modal } from "@mui/material";
+import { Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+
 // import { StyledContainer } from "../Home/home.styles";
 
 const Register: FC = (): JSX.Element => {
@@ -26,14 +36,31 @@ const Register: FC = (): JSX.Element => {
   const { useAuth } = useScreenHooks();
   const { handleRegister, registerRegister, handleSubmitRegister, profession } =
     useAuth();
+  const [open, setOpen] = React.useState(false);
 
+  const style = {
+    position: "absolute" as "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: width >= 1024 ? "70%" : "80%",
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+    height: width >= 1024 ? "80%" : "60%",
+    fontFamily: "Montserrat,sans-serif",
+    color: "#004289",
+  };
+
+  const handleClose = () => setOpen(false);
   return (
     <React.Fragment>
       {/* <StyledContainer maxWidth="lg"> */}
       {width >= 1200 ? (
         <StyledSection
           background="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/portal_colo.png"
-          style={{ height: "60.7rem",     marginBottom: "-4%" }}
+          style={{ height: "60.7rem", marginBottom: "-4%" }}
         >
           <Container>
             <Grid container>
@@ -152,9 +179,49 @@ const Register: FC = (): JSX.Element => {
                       )}
                     />
                   </Grid>
+
+                  {/* Modal */}
+                  <Grid>
+                    <Modal
+                      open={open}
+                      onClose={handleClose}
+                      aria-labelledby="modal-modal-title"
+                      aria-describedby="modal-modal-description"
+                    >
+                      <Box sx={style}>
+                        <div className="flex justify-between mb-2">
+                          <Typography
+                            id="modal-modal-title"
+                            variant="h6"
+                            component="h2"
+                          >
+                            Tratamiento de datos
+                          </Typography>
+                          <Typography
+                            onClick={handleClose}
+                            style={{ float: "right", cursor: "pointer" }}
+                          >
+                            X
+                          </Typography>
+                        </div>
+                        <Typography id="modal-modal-description"></Typography>
+                        <iframe
+                          width="100%"
+                          height={width >= 1024 ? "90%" : "80%"}
+                          title="pdf1"
+                          src={
+                            "https://praxispharmaceutical.com.co/Politica-tratamiento-de-datos-Consolidado.pdf"
+                          }
+                        ></iframe>
+                      </Box>
+                    </Modal>
+                  </Grid>
+                  {/* Modal */}
+
                   <Grid lg={12} className="flex justify-center">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      onClick={() => setOpen(true)}
+                      control={<Checkbox checked={open === false}/>}
                       label="Acepta Política de manejo de datos. Política de privacidad. Términos y condiciones"
                       style={{
                         color: "#666666",
@@ -179,14 +246,34 @@ const Register: FC = (): JSX.Element => {
         </StyledSection>
       ) : (
         <React.Fragment>
-          <StyledSection background="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/fondo_iciio_responsive.png" style={{ marginTop: "5.9rem" }}>
+          <StyledSection
+            background="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/fondo_iciio_responsive.png"
+            style={{ marginTop: "5.9rem" }}
+          >
             <Container>
               <Grid item md={12} xs={12} className="pt-12">
-              <Grid item xs={12} sm={12} md={12} className="d-flex justify-center mb-12"> 
-                      <img src={'http://api-praxis.eml.com.co/wp-content/uploads/2022/04/praxis_responsive.png'} alt="" width="200" />
-                  </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  className="d-flex justify-center mb-12"
+                >
+                  <img
+                    src={
+                      "http://api-praxis.eml.com.co/wp-content/uploads/2022/04/praxis_responsive.png"
+                    }
+                    alt=""
+                    width="200"
+                  />
+                </Grid>
                 <Grid md={12} className="pb-12 sm:pb-12">
-                  <StyledTitleFactores className="text-center" style={{ fontSize: "24px" }}>Registro</StyledTitleFactores>
+                  <StyledTitleFactores
+                    className="text-center"
+                    style={{ fontSize: "24px" }}
+                  >
+                    Registro
+                  </StyledTitleFactores>
                 </Grid>
                 <Grid lg={12} className="pb-4 sm:pb-4 flex justify-center">
                   <Controller
@@ -289,6 +376,57 @@ const Register: FC = (): JSX.Element => {
                     )}
                   />
                 </Grid>
+                {/* Modal */}
+                <Grid>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Box sx={style}>
+                    <div className="flex justify-between mb-2">
+                          <Typography
+                            id="modal-modal-title"
+                            variant="h6"
+                            component="h2"
+                          >
+                            Tratamiento de datos
+                          </Typography>
+                          <Typography
+                            onClick={handleClose}
+                            style={{ float: "right", cursor: "pointer" }}
+                          >
+                            X
+                          </Typography>
+                        </div>
+                      <Typography
+                        id="modal-modal-description"
+                        sx={{ mt: 2 }}
+                      ></Typography>
+                      <iframe
+                        width="100%"
+                        height="90%"
+                        title="pdf2"
+                        src={
+                          "https://praxispharmaceutical.com.co/Politica-tratamiento-de-datos-Consolidado.pdf"
+                        }
+                      ></iframe>
+                    </Box>
+                  </Modal>
+                </Grid>
+                {/* Modal */}
+                <Grid lg={12} className="flex justify-center">
+                  <FormControlLabel
+                    onClick={() => setOpen(true)}
+                    control={<Checkbox />}
+                    label="Acepta Política de manejo de datos. Política de privacidad. Términos y condiciones"
+                    style={{
+                      color: "#666666",
+                      fontFamily: "'Montserrat', sans-serif !important",
+                    }}
+                  />
+                </Grid>
                 <Grid
                   lg={12}
                   className="gap-4 py-6 sm:pb-6 flex justify-center"
@@ -306,7 +444,6 @@ const Register: FC = (): JSX.Element => {
         </React.Fragment>
       )}
       {/* </StyledContainer> */}
-      
     </React.Fragment>
   );
 };

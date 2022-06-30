@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { trackPromise } from "react-promise-tracker";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const useActiveUsers = () => {
     /** History */
@@ -35,6 +36,11 @@ const useActiveUsers = () => {
         return axios.post(`${process.env.REACT_APP_BASE_URL_API}/users/active-user`, {id})
         .then((res:any) => {
             if(res.data.transaction.status){
+                Swal.fire({
+                    icon: "success",
+                    title: "Usuario activado",
+                    text: "se activo el usuario exitosamente"
+                })
                 trackPromise(getUsers())
             }
         }).catch((err: any) => {
@@ -50,6 +56,11 @@ const useActiveUsers = () => {
         return axios.post(`${process.env.REACT_APP_BASE_URL_API}/users/delete-user`, {id})
         .then((res:any) => {
             if(res.data.transaction.status){
+                Swal.fire({
+                    icon: "success",
+                    title: "Usuario eliminado",
+                    text: "se elimino el usuario exitosamente"
+                })
                 trackPromise(getUsers())
             }
         }).catch((err: any) => {

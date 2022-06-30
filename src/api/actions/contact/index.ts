@@ -14,11 +14,7 @@ const useContactActions = () => {
         try {
             const res = await sendContactService(data);
 
-            if(res.data.transaction.status === true){
-                onSuccess && onSuccess();
-            }else{
-                onError && onError(res.data.message.content);
-            }
+            onSuccess && onSuccess(res)
         } catch (error) {
             onError && onError();
         }

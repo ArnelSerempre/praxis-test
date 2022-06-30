@@ -56,7 +56,7 @@ const FormContact: FC = (): JSX.Element => {
                                             rows={6}
                                             id="email"
                                             fullWidth
-                                            {...register('email')}
+                                            {...register('message')}
                                         />
                                     </Grid>
                                     <Grid item lg={12} className="md:pt-6 flex justify-center">

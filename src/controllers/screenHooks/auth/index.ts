@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom"
+import Swal from "sweetalert2";
 
 const useAuth = () => {
     // Actions
@@ -96,10 +97,16 @@ const useAuth = () => {
                     setOpen(true);
                     setText("Gracias! ahora puedes ingresar a nuestra plataforma");
                     setVariant("success");
-
-                    setTimeout(() => {
-                        history.push('/login')
-                    }, 5000)
+                    
+                    Swal.fire({
+                        title: "Nos falta un solo paso",
+                        text: 'Falta que te activen la cuenta para que puedas ingresar a la plataforma, tan pronto activemos tu cuenta te llegara un correo electronico... Recuerda que te puede llegar como un spam o en tu bandeja de entrada',
+                        icon: "success"
+                    }).then((res) => {
+                        if(res.isConfirmed){
+                            history.push('/login')
+                        }
+                    })
                 },
                 onError: (error: any) => {
                     setOpen(true);
