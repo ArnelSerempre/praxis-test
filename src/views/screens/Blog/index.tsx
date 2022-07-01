@@ -85,7 +85,7 @@ const Blog: FC = (): JSX.Element => {
                           className="px-6"
                         >
                           <StyledImage
-                            src={postsAssets.blog_number_1?.content}
+                            src={"https://api.praxispharmaceutical.com.co/wp-content/uploads/2022/03/uno_azul_blog.png"}
                             alt="pre-test"
                             style={{ position: "absolute   " }}
                           />

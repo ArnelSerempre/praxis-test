@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Grid } from "@mui/material";
 import useSaludStyles from "./salud.style";
 import useControllers from "controllers";
@@ -49,13 +49,8 @@ const Salud = () => {
   };
 
   const [expanded, setExpanded] = useState<string | false>();
-// eslint-disable-next-line
-  let saludArray: any = [];
 
-  useEffect(() => {
-    if (cuidadores) {
-      // eslint-disable-next-line
-      saludArray = [
+       let saludArray = [
         {
           name: "Factor de crecimiento epidérmico",
           id: "Factor de crecimiento epidérmico",
@@ -110,22 +105,22 @@ const Salud = () => {
                 <React.Fragment>
                   <StyledImageResponsive
                     src={
-                      cuidadores.pacientes_cuidadores_responsive &&
+                      cuidadores &&
                       cuidadores.tabla_metologia.content
                     }
                     alt={
-                      cuidadores.pacientes_cuidadores_responsive &&
+                      cuidadores &&
                       cuidadores.tabla_metologia.alt
                     }
                   ></StyledImageResponsive>
 
                   <StyledImageResponsive
                     src={
-                      cuidadores.pacientes_cuidadores_responsive &&
+                      cuidadores &&
                       cuidadores.evento_logico1.content
                     }
                     alt={
-                      cuidadores.pacientes_cuidadores_responsive &&
+                      cuidadores &&
                       cuidadores.evento_logico1.alt
                     }
                     className="pb-6"
@@ -137,9 +132,6 @@ const Salud = () => {
           ),
         },
       ];
-    }
-    // eslint-disable-next-line
-  }, [cuidadores]);
 
   return (
     <React.Fragment>

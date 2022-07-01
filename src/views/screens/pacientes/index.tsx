@@ -28,6 +28,9 @@ const Pacientes = () => {
   const [width, setWidth] = useState<number>(window.innerWidth);
 
   window.addEventListener("resize", () => setWidth(window.innerWidth));
+
+  console.log(recentPosts)
+
   return (
     <React.Fragment>
       <StyledContainer maxWidth="lg">
