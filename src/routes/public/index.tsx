@@ -20,7 +20,8 @@ const usePublicRoutes = () => {
         Register,
         RecoveryPassword,
         ActiveUsers,
-        CommentAdmin
+        CommentAdmin,
+        ClinicalStudies
     } = useScreens();
 
 
@@ -115,6 +116,12 @@ const usePublicRoutes = () => {
             exact: true,
             name: "CommentsAdmin"
         },
+        {
+            Component: ClinicalStudies,
+            path: "/Estudios-clinicos",
+            name: "ClinicalStudies",
+            exact: true
+        }
     ];
 
     return map(routes, (route: Route, index: number) => (   

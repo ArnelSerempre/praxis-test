@@ -14,6 +14,8 @@ const Register = lazy(() => import('./Register'));
 const RecoveryPassword = lazy(() => import('./RecoveryPassword'));
 const ActiveUsers = lazy(() => import('./Active Users'));
 const CommentAdmin = lazy(() => import('./CommentAdmin'));
+/** Clinical Studies */
+const ClinicalStudies = lazy(() => import("./clinical-studies"));
 
 const useScreens = () => {      
     return {
@@ -30,7 +32,8 @@ const useScreens = () => {
         Register,
         RecoveryPassword,
         ActiveUsers,
-        CommentAdmin
+        CommentAdmin,
+        ClinicalStudies
     };
 };
 
