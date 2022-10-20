@@ -7,6 +7,7 @@ import usePacientesActions from "./pacientes";
 import useCuidadoresActions from "./cuidadores";
 import useAuthActions from "./auth";
 import useTerapeuticNumberActions from "./terapeutic_number";
+import useClinicalStudiesActions from './clinical-studies';
 
 const useActions = () => {
   // Dispatch
@@ -22,6 +23,7 @@ const useActions = () => {
     useCuidadoresActions,
     useAuthActions,
     useTerapeuticNumberActions,
+    useClinicalStudiesActions
   };
 };
 

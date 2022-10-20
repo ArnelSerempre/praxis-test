@@ -7,6 +7,7 @@ import usePacientes from "./pacientes";
 import useProducts from "./products";
 import useTerapeuticNumber from "./terapeutic-number";
 import useAuth from "./auth";
+import useClinicalStudies from './clinical-studies/index';
 
 const useScreenHooks = () => {
     return {
@@ -18,7 +19,8 @@ const useScreenHooks = () => {
         useBlog,
         usePacientes,
         useCuidadores,
-        useAuth
+        useAuth,
+        useClinicalStudies
     }
 }
 

@@ -5,6 +5,7 @@ const Footer = lazy(() => import('./Footer/index'));
 const Accordion = lazy(() => import('./Accordion'));
 const ScrollButtons = lazy(() => import("./ScrollButtons"));
 const AccordionClinicalStudies = lazy(() => import("./AccordionClinicalStudies"));
+const ModalAccordion = lazy(() => import("./ModalAccordion"));
 
 const useComponents = () => {
     return {
@@ -12,7 +13,8 @@ const useComponents = () => {
         Footer,
         Accordion,
         ScrollButtons,
-        AccordionClinicalStudies
+        AccordionClinicalStudies,
+        ModalAccordion
     };
 };
 

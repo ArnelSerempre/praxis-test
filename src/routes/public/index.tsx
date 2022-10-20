@@ -118,7 +118,7 @@ const usePublicRoutes = () => {
         },
         {
             Component: ClinicalStudies,
-            path: "/Estudios-clinicos",
+            path: "/clinical-studies",
             name: "ClinicalStudies",
             exact: true
         }

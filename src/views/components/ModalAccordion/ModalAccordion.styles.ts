@@ -1,0 +1,56 @@
+import { Modal } from '@mui/material';
+import { Box } from '@mui/material';
+import styled from 'styled-components';
+import tw from 'twin.macro';
+/** Interfaces */
+import { StyledBoxProps } from 'models/interfaces/ClinicalStudies.interfaces';
+
+export const StyledModal = styled(Modal)`
+    ${tw`flex justify-center items-center`}
+`;
+
+export const StyledBox = styled(Box) <StyledBoxProps>`
+    background: url('${(props: StyledBoxProps) => props.background}') no-repeat;
+    background-position: top right;
+    background-size: 200px 200px;
+    ${tw`bg-[#fff] w-[90%] lg:w-[979px] flex justify-center p-[10px 30px]`}
+    border-radius: 10px;
+    border: 3px solid #e6e6e6;
+    overflow: auto;
+
+    @media (max-width: 978px) {
+        background-attachment: local;
+        background-size: 150px;
+    }
+
+    @media (max-width: 375px) {
+        ${tw`h-[600px]`}
+    }
+`;
+
+export const StyledReference = styled.h3`
+    ${tw`mt-[150px] lg:mt-[10%] text-[#999999] text-[16px] lg:text-[26px]`}
+    font-weight: 600;
+`;
+
+export const StyledTitle = styled.h1`
+    ${tw`mt-6 w-full lg:w-[calc(100% - 200px)] text-[#004289] text-[20px] lg:text-[30px] lg:text-justify m-0`}
+    font-weight: 700;
+`;
+
+export const StyledDescription = styled.p`
+    ${tw`text-[#999999] mt-[5%] text-[10px] lg:text-[20px]`}
+`;
+
+export const StyledGetOficial = styled.h3`
+    ${tw`text-[#004289] text-center text-[15px] lg:text-[25px] mt-[5%]`}
+    font-weight: 700;
+`;
+
+export const StyledButton = styled.button`
+    ${tw`mt-[5%] mb-[20px] text-[#fff] bg-[#666666] cursor-pointer w-[130px] h-[36px] rounded`}
+`;
+
+export const StyledClose = styled.span`
+    ${tw`text-[#004289] text-[30px] font-bold`}
+`

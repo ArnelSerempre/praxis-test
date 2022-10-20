@@ -1,13 +1,12 @@
-import useComponents from "./components";
-import useLayouts from "./layout";
-import useScreens from "./screens";
-
+import useScreens from './screens';
+import useLayouts from './layout';
+import useComponents from './components';
 const useViews = () => {
     return {
-        useLayouts,
         useScreens,
+        useLayouts,
         useComponents
-    };
+    }
 }
 
 export default useViews;

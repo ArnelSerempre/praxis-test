@@ -1,69 +1,48 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Container } from "@mui/material";
 /** Styles */
 import { StyledContainer } from "./ClinicalStudies.styles";
 /** Local Modules */
 import useViews from "views";
+import useControllers from "controllers";
+import _ from 'lodash';
+import { ClinicalStudiesResponse } from 'models/interfaces/ClinicalStudies.interfaces';
 
 const ClinicalStudies: FC = (): JSX.Element => {
   /** Views */
   const { useComponents } = useViews();
   const { AccordionClinicalStudies } = useComponents();
 
-  const typs: any = {
-    name: "",
-    estudios: [
-      {
-        name: "Titulo: Epidermal Growth Factor is Effective in the treatmentof Diabetic Foot Ulcers",
-        type: "Estudio",
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam minima vero nam iusto nobis totam amet adipisci atque natus veritatis, ea saepe, laborum alias, laudantium non quos architecto! Possimus.",
-        url: "http://google.com/",
-      },
-      {
-        name: "Titulo: Epidermal Growth Factor is Effective in the treatmentof Diabetic Foot Ulcers",
-        type: "Estudio",
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam minima vero nam iusto nobis totam amet adipisci atque natus veritatis, ea saepe, laborum alias, laudantium non quos architecto! Possimus.",
-        url: "http://google.com/",
-      },
-      {
-        name: "Titulo: Epidermal Growth Factor is Effective in the treatmentof Diabetic Foot Ulcers",
-        type: "Estudio",
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam minima vero nam iusto nobis totam amet adipisci atque natus veritatis, ea saepe, laborum alias, laudantium non quos architecto! Possimus.",
-        url: "http://google.com/",
-      },
-      {
-        name: "Titulo: Epidermal Growth Factor is Effective in the treatmentof Diabetic Foot Ulcers",
-        type: "Estudio",
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam minima vero nam iusto nobis totam amet adipisci atque natus veritatis, ea saepe, laborum alias, laudantium non quos architecto! Possimus.",
-        url: "http://google.com/",
-      },
-      {
-        name: "Titulo: Epidermal Growth Factor is Effective in the treatmentof Diabetic Foot Ulcers",
-        type: "Estudio",
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam minima vero nam iusto nobis totam amet adipisci atque natus veritatis, ea saepe, laborum alias, laudantium non quos architecto! Possimus.",
-        url: "http://google.com/",
-      },
-    ],
-    articulos: [
-      {
-        name: "Titulo: Epidermal Growth Factor is Effective in the treatmentof Diabetic Foot Ulcers",
-        type: "Estudio",
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam minima vero nam iusto nobis totam amet adipisci atque natus veritatis, ea saepe, laborum alias, laudantium non quos architecto! Possimus.",
-        url: "http://google.com/",
-      },
-      {
-        name: "Titulo: Epidermal Growth Factor is Effective in the treatmentof Diabetic Foot Ulcers",
-        type: "Estudio",
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In magnam minima vero nam iusto nobis totam amet adipisci atque natus veritatis, ea saepe, laborum alias, laudantium non quos architecto! Possimus.",
-        url: "http://google.com/",
-      },
-    ],
-  };
+  /** Controllers */
+  const {useScreenHooks} = useControllers();
+  const {useClinicalStudies} = useScreenHooks();
+  const {clinicalStudies, getClinicalStudies} = useClinicalStudies();
+
+  const [panel, setPanel] = useState<string | boolean>(false);
+
+  /** useEffects */
+  useEffect(() => {
+    getClinicalStudies();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <StyledContainer>
       <Container>
-        <AccordionClinicalStudies name="Ulceras de pie diabetico" studies={typs.estudios} articles={typs.articulos}/>
+        {
+          clinicalStudies && _.map(clinicalStudies, (item: ClinicalStudiesResponse, index: number) => (
+            <AccordionClinicalStudies
+              key={index}
+              name={item.name}
+              articles={item.articles}
+              studies={item.studies}
+              background={item.background_item}
+              id={item.id}
+              setPanel={setPanel}
+              panel={panel}
+            />
+          ))
+        }
       </Container>
     </StyledContainer>
   );

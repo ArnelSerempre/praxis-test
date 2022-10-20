@@ -163,3 +163,13 @@
 .MuiModal-root {
     background: #00000050;
 }
+
+.MuiBackdrop-root {
+    background-color: transparent !important;
+}
+
+.drop {
+    .MuiPaper-root {
+        border-radius: 15px !important;
+    }
+}

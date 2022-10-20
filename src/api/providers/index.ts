@@ -7,6 +7,7 @@ import usePacientesProviders from "./pacientes";
 import useCuidadoresProviders from "./cuidadores";
 import useAuthProviders from "./auth";
 import useTerapeuticNumberProviders from "./Terapeutic-number";
+import useClinicalStudiesProviders from './clinical-studies';
 
 const useProviders = () => {
   axios.defaults.baseURL = process.env.REACT_APP_BASE_URL_API;
@@ -20,6 +21,7 @@ const useProviders = () => {
     useCuidadoresProviders,
     useAuthProviders,
     useTerapeuticNumberProviders,
+    useClinicalStudiesProviders
   };
 };
 
