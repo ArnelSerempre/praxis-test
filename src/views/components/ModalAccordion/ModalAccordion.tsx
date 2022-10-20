@@ -28,7 +28,7 @@ const ModalAccordion: FC<ModalAccordionProps> = ({
     >
       <StyledBox background={item.background_modal}>
         <Container>
-          <div className="w-full mt-2">
+          <div className="w-full mt-2 flex justify-end">
             <StyledClose onClick={onClose}>x</StyledClose>
           </div>
           <div className="w-full">

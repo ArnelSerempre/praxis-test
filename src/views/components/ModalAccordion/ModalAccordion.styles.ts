@@ -13,10 +13,12 @@ export const StyledBox = styled(Box) <StyledBoxProps>`
     background: url('${(props: StyledBoxProps) => props.background}') no-repeat;
     background-position: top right;
     background-size: 200px 200px;
-    ${tw`bg-[#fff] w-[90%] lg:w-[979px] flex justify-center p-[10px 30px]`}
+    ${tw`bg-[#fff] w-[90%] lg:w-[979px] h-[500px] flex justify-center p-[10px 30px]`}
     border-radius: 10px;
     border: 3px solid #e6e6e6;
     overflow: auto;
+    background-position-y: 60px;
+    background-attachment: local;
 
     @media (max-width: 978px) {
         background-attachment: local;
@@ -30,7 +32,7 @@ export const StyledBox = styled(Box) <StyledBoxProps>`
 `;
 
 export const StyledReference = styled.h3`
-    ${tw`mt-[100px] lg:mt-[10%] text-[#999999] text-[16px] lg:text-[26px]`}
+    ${tw`mt-[130px] lg:mt-[10%] text-[#999999] text-[16px] lg:text-[26px]`}
     font-weight: 600;
 `;
 
