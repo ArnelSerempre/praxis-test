@@ -21,15 +21,16 @@ export const StyledBox = styled(Box) <StyledBoxProps>`
     @media (max-width: 978px) {
         background-attachment: local;
         background-size: 150px;
+        ${tw`h-[500px]`}
     }
 
     @media (max-width: 375px) {
-        ${tw`h-[600px]`}
+        ${tw`h-[500px]`}
     }
 `;
 
 export const StyledReference = styled.h3`
-    ${tw`mt-[150px] lg:mt-[10%] text-[#999999] text-[16px] lg:text-[26px]`}
+    ${tw`mt-[100px] lg:mt-[10%] text-[#999999] text-[16px] lg:text-[26px]`}
     font-weight: 600;
 `;
 
