@@ -34,7 +34,7 @@ const ModalAccordion: FC<ModalAccordionProps> = ({
           <div className="w-full">
             <StyledReference>Estudio 01</StyledReference>
             <StyledTitle>{item.name}</StyledTitle>
-            <StyledDescription>{item.description}</StyledDescription>
+            <StyledDescription dangerouslySetInnerHTML={{__html:item.description }}></StyledDescription>
           </div>
           <StyledGetOficial>Obtenga la version completa</StyledGetOficial>
           <div className="w-full flex justify-center">

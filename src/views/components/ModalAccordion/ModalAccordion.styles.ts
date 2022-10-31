@@ -41,8 +41,11 @@ export const StyledTitle = styled.h1`
     font-weight: 700;
 `;
 
-export const StyledDescription = styled.p`
+export const StyledDescription = styled.div`
     ${tw`text-[#999999] mt-[5%] text-[10px] lg:text-[20px]`}
+    a {
+        ${tw`text-[#01428a]`}
+    }
 `;
 
 export const StyledGetOficial = styled.h3`
